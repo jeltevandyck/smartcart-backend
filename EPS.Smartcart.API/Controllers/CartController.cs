@@ -10,7 +10,7 @@ namespace EPS.Smartcart.API.Controllers;
 
 public class CartController : AbstractController
 {
-    protected CartController(IMediator mediator) : base(mediator)
+    public CartController(IMediator mediator) : base(mediator)
     {
     }
     

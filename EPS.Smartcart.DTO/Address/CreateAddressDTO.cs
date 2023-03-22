@@ -2,7 +2,6 @@
 
 public class CreateAddressDTO
 {
-    public string Id { get; set; }
     public string Street { get; set; }
     public string Number { get; set; }
     public string? Extra { get; set; }

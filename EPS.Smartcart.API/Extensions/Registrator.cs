@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using ExceptionHandlerMiddleware = EPS.Smartcart.API.Middleware.ExceptionHandlerMiddleware;
 
 namespace EPS.Smartcart.API.Extensions;
 

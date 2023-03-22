@@ -2,5 +2,4 @@
 
 public class CreateCartDTO
 {
-    public string Id { get; set; }
 }
