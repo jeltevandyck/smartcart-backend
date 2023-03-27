@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EPS.Smartcart.Application.Interfaces;
+using EPS.Smartcart.Domain.Types;
 using EPS.Smartcart.DTO.Cart;
 using MediatR;
 
@@ -26,6 +27,8 @@ public class CreateCartCommandHandler : AbstractHandler, IRequestHandler<CreateC
         var cart = _mapper.Map<Domain.Cart>(request.CartDTO);
 
         cart.Id = Guid.NewGuid().ToString();
+        cart.Status = CartStatus.STANDBY;
+        cart.Code = Guid.NewGuid().ToString();
 
         _uow.CartRepository.Create(cart);
         await _uow.Commit();

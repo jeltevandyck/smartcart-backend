@@ -11,4 +11,5 @@ public class UpdateProductDTO
     public int? Amount { get; set; }
     public DateTime? ExperitionDate { get; set; }
     public DateTime? ProductionDate { get; set; }
+    public string StoreId { get; set; }
 }

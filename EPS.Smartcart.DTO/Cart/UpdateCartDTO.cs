@@ -5,6 +5,7 @@ namespace EPS.Smartcart.DTO.Cart;
 public class UpdateCartDTO
 {
     public string Id { get; set; }
-    public CartStatus Status { get; set; }
-    public string Code { get; set; }
+    public CartStatus? Status { get; set; }
+    public bool ChangeCode { get; set; } = false;
+    public string StoreId { get; set; }
 }

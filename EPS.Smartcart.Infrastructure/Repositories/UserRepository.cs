@@ -9,4 +9,9 @@ public class UserRepository : AbstractRepository<User>
     public UserRepository(SmartcartContext context) : base(context.Users)
     {
     }
+    
+    public override IQueryable<User> Include(IQueryable<User> queryable)
+    {
+        return queryable;
+    }
 }

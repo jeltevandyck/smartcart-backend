@@ -10,5 +10,7 @@ public class CartConfiguration : IEntityTypeConfiguration<Cart>
     {
         builder.ToTable("tblCarts");
         builder.HasKey(x => x.Id);
+        
+        builder.HasOne(x => x.Store);
     }
 }

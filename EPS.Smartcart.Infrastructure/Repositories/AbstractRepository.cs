@@ -21,6 +21,8 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
         queryable = filter.Apply(queryable);
         
         queryable = paginationFilter.Apply(queryable);
+
+        queryable = Include(queryable);
         
         return await queryable.ToListAsync();
     }
@@ -46,4 +48,6 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
     {
         return Data.Remove(entity).Entity;
     }
+
+    public abstract IQueryable<T> Include(IQueryable<T> queryable);
 }

@@ -9,4 +9,9 @@ public class AddressRepository : AbstractRepository<Address>
     public AddressRepository(SmartcartContext context) : base(context.Addresses)
     {
     }
+    
+    public override IQueryable<Address> Include(IQueryable<Address> queryable)
+    {
+        return queryable;
+    }
 }

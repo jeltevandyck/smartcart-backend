@@ -9,4 +9,9 @@ public class CartRepository : AbstractRepository<Cart>
     public CartRepository(SmartcartContext context) : base(context.Carts)
     {
     }
+
+    public override IQueryable<Cart> Include(IQueryable<Cart> queryable)
+    {
+        return queryable;
+    }
 }

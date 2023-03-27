@@ -24,6 +24,11 @@ public class UpdateCartCommandHandler : AbstractHandler, IRequestHandler<UpdateC
     public async Task<Domain.Cart> Handle(UpdateCartCommand request, CancellationToken cancellationToken)
     {
         var cart = await _uow.CartRepository.GetById(request.CartDTO.Id);
+        
+        if (request.CartDTO.ChangeCode)
+        {
+            cart.Code = Guid.NewGuid().ToString();
+        }
 
         cart = _mapper.Map(request.CartDTO, cart);
         cart = _uow.CartRepository.Update(cart);

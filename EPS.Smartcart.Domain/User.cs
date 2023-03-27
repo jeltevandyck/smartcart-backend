@@ -6,4 +6,5 @@ public class User : Entity
     public string LastName { get; set; }
     public string Email { get; set; }
     public DateTime BirthDate { get; set; }
+    public List<Order> Orders { get; set; }
 }

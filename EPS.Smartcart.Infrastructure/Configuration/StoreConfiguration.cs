@@ -10,5 +10,7 @@ public class StoreConfiguration : IEntityTypeConfiguration<Store>
     {
         builder.ToTable("tblStores");
         builder.HasKey(x => x.Id);
+
+        builder.HasOne(x => x.Address);
     }
 }
