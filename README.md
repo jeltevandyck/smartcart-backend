@@ -1,6 +1,6 @@
 # Smartcart REST API
 
-![image](https://github.com/jeltevandyck/smartcart-backend/blob/master/value_proposition.png)
+![image](https://github.com/jeltevandyck/smartcart-backend/blob/master/logo.png)
 
 ## Address
 
