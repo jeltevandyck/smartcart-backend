@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EPS.Smartcart.Infrastructure.Migrations
 {
     [DbContext(typeof(SmartcartContext))]
-    [Migration("20230327102543_Initial")]
+    [Migration("20230329132845_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -91,10 +91,10 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("ChangedStatusDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("PaidDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Status")

@@ -2,6 +2,7 @@
 using EPS.Smartcart.Domain;
 using EPS.Smartcart.DTO.Address;
 using EPS.Smartcart.DTO.Cart;
+using EPS.Smartcart.DTO.Order;
 using EPS.Smartcart.DTO.Product;
 using EPS.Smartcart.DTO.Store;
 using EPS.Smartcart.DTO.User;
@@ -31,5 +32,9 @@ public class Mappings : Profile
         CreateMap<CreateCartDTO, Cart>().ReverseMap();
         CreateMap<UpdateCartDTO, Cart>().ReverseMap();
         CreateMap<DeleteCartDTO, Cart>().ReverseMap();
+        
+        CreateMap<CreateOrderDTO, Order>().ReverseMap();
+        CreateMap<UpdateOrderDTO, Order>().ReverseMap();
+        CreateMap<DeleteOrderDTO, Order>().ReverseMap();
     }
 }

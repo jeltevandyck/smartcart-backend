@@ -1,11 +1,12 @@
 ﻿using EPS.Smartcart.Domain;
+using EPS.Smartcart.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace EPS.Smartcart.Infrastructure.Repositories;
 
 public class OrderRepository : AbstractRepository<Order>
 {
-    public OrderRepository(DbSet<Order> data) : base(data)
+    public OrderRepository(SmartcartContext context) : base(context.Orders)
     {
     }
 

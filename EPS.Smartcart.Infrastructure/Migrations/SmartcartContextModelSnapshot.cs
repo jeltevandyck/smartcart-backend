@@ -88,10 +88,10 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("ChangedStatusDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("PaidDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
