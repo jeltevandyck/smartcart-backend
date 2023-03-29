@@ -9,6 +9,8 @@ public interface IUnitOfWork
     public IRepository<Cart> CartRepository { get; }
     public IRepository<Store> StoreRepository { get; }
     public IRepository<Product> ProductRepository { get; }
+    public IRepository<Order> OrderRepository { get; }
+    public IRepository<OrderItem> OrderItemRepository { get; }
 
     Task Commit();
 }

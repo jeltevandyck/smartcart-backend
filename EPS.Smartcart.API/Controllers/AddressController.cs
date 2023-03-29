@@ -14,10 +14,11 @@ public class AddressController : AbstractController
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Address>> GetAll([FromQuery] AddressFilter addressFilter,
+    public async Task<IActionResult> GetAll([FromQuery] AddressFilter addressFilter,
         [FromQuery] PaginationFilter<Address> paginationFilter)
     {
-        return await _mediator.Send(new GetAllAddressesQuery(addressFilter, paginationFilter));
+        var addresses = await _mediator.Send(new GetAllAddressesQuery(addressFilter, paginationFilter));
+        return Ok(addresses);
     }
 
     [HttpGet("{id}")]

@@ -2,5 +2,6 @@
 
 public class UpdateOrderDTO
 {
-    
+    public string Id { get; set; }
+    public string UserId { get; set; }
 }

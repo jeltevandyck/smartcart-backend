@@ -2,5 +2,5 @@
 
 public class DeleteOrderDTO
 {
-    
+    public string Id { get; set; }
 }

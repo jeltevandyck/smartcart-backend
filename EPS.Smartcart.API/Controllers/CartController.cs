@@ -15,10 +15,11 @@ public class CartController : AbstractController
     }
     
     [HttpGet]
-    public async Task<IEnumerable<Cart>> GetAll([FromQuery] CartFilter cartFilter,
+    public async Task<IActionResult> GetAll([FromQuery] CartFilter cartFilter,
         [FromQuery] PaginationFilter<Cart> paginationFilter)
     {
-        return await _mediator.Send(new GetAllCartsQuery(cartFilter, paginationFilter));
+        var carts = await _mediator.Send(new GetAllCartsQuery(cartFilter, paginationFilter));
+        return Ok(carts);
     }
 
     [HttpGet("{id}")]
