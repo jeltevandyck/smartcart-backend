@@ -32,6 +32,8 @@ public static class Registrator
         service.AddScoped<IRepository<Cart>, CartRepository>();
         service.AddScoped<IRepository<Order>, OrderRepository>();
         service.AddScoped<IRepository<OrderItem>, OrderItemRepository>();
+        service.AddScoped<IRepository<GroceryList>, GroceryListRepository>();
+        service.AddScoped<IRepository<GroceryItem>, GroceryItemRepository>();
         service.AddScoped<IUnitOfWork, UnitOfWork>();
         return service;
     }

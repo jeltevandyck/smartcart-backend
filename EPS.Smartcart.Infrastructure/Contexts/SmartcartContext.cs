@@ -23,6 +23,8 @@ public class SmartcartContext : DbContext
     public DbSet<Cart> Carts { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<GroceryList> GroceryLists { get; set; }
+    public DbSet<GroceryItem> GroceryItems { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

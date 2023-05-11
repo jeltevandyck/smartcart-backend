@@ -12,6 +12,7 @@ public class OrderRepository : AbstractRepository<Order>
 
     public override IQueryable<Order> Include(IQueryable<Order> queryable)
     {
+        queryable = queryable.Include(x => x.OrderItems).AsNoTracking();
         return queryable;
     }
 }

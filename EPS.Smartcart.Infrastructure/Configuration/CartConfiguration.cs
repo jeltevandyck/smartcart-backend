@@ -12,5 +12,6 @@ public class CartConfiguration : IEntityTypeConfiguration<Cart>
         builder.HasKey(x => x.Id);
         
         builder.HasOne(x => x.Store);
+        builder.HasOne(x => x.Order);
     }
 }

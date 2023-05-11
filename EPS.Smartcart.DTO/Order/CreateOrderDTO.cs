@@ -2,5 +2,5 @@
 
 public class CreateOrderDTO
 {
-    public string UserId { get; set; }
+    public string CartId { get; set; }
 }

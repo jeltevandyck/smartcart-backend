@@ -2,7 +2,10 @@
 using EPS.Smartcart.Domain;
 using EPS.Smartcart.DTO.Address;
 using EPS.Smartcart.DTO.Cart;
+using EPS.Smartcart.DTO.GroceryItem;
+using EPS.Smartcart.DTO.GroceryList;
 using EPS.Smartcart.DTO.Order;
+using EPS.Smartcart.DTO.OrderItem;
 using EPS.Smartcart.DTO.Product;
 using EPS.Smartcart.DTO.Store;
 using EPS.Smartcart.DTO.User;
@@ -36,5 +39,17 @@ public class Mappings : Profile
         CreateMap<CreateOrderDTO, Order>().ReverseMap();
         CreateMap<UpdateOrderDTO, Order>().ReverseMap();
         CreateMap<DeleteOrderDTO, Order>().ReverseMap();
+
+        CreateMap<CreateGroceryItemDTO, GroceryItem>().ReverseMap();
+        CreateMap<UpdateGroceryItemDTO, GroceryItem>().ReverseMap();
+        CreateMap<DeleteGroceryItemDTO, GroceryItem>().ReverseMap();
+        
+        CreateMap<CreateOrderItemDTO, OrderItem>().ReverseMap();
+        CreateMap<UpdateOrderItemDTO, OrderItem>().ReverseMap();
+        CreateMap<DeleteOrderItemDTO, OrderItem>().ReverseMap();
+        
+        CreateMap<CreateGroceryListDTO, GroceryList>().ReverseMap();
+        CreateMap<UpdateGroceryListDTO, GroceryList>().ReverseMap();
+        CreateMap<DeleteGroceryListDTO, GroceryList>().ReverseMap();
     }
 }

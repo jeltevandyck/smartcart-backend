@@ -8,6 +8,8 @@ public class Cart : Entity
     public string? Code { get; set; }
     public string StoreId { get; set; }
     public Store Store { get; set; }
-    public string UserId { get; set; }
+    public string? UserId { get; set; }
     public User? User { get; set; }
+    public Order Order { get; set; }
+    public GroceryList? GroceryList { get; set; }
 }

@@ -15,8 +15,10 @@ public class UnitOfWork : IUnitOfWork
     public IRepository<Product> ProductRepository { get; }
     public IRepository<Order> OrderRepository { get; }
     public IRepository<OrderItem> OrderItemRepository { get; }
+    public IRepository<GroceryList> GroceryListRepository { get; }
+    public IRepository<GroceryItem> GroceryItemRepository { get; }
 
-    public UnitOfWork(SmartcartContext context, IRepository<User> userRepository, IRepository<Address> addressRepository, IRepository<Cart> cartRepository, IRepository<Store> storeRepository, IRepository<Product> productRepository, IRepository<Order> orderRepository, IRepository<OrderItem> orderItemRepository)
+    public UnitOfWork(SmartcartContext context, IRepository<User> userRepository, IRepository<Address> addressRepository, IRepository<Cart> cartRepository, IRepository<Store> storeRepository, IRepository<Product> productRepository, IRepository<Order> orderRepository, IRepository<OrderItem> orderItemRepository, IRepository<GroceryList> groceryListRepository, IRepository<GroceryItem> groceryItemRepository)
     {
         _context = context;
         UserRepository = userRepository;
@@ -26,6 +28,8 @@ public class UnitOfWork : IUnitOfWork
         ProductRepository = productRepository;
         OrderRepository = orderRepository;
         OrderItemRepository = orderItemRepository;
+        GroceryListRepository = groceryListRepository;
+        GroceryItemRepository = groceryItemRepository;
     }
 
     public async Task Commit()

@@ -10,9 +10,9 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         builder.ToTable("tblUsers");
         builder.HasKey(x => x.Id);
-        
+
         builder.HasMany(x => x.Orders)
-            .WithOne(x => x.User)
-            .HasForeignKey(x => x.UserId);
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

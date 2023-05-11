@@ -67,10 +67,10 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ChangedStatusDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Status = table.Column<int>(type: "int", nullable: false)
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,26 +84,25 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "tblCarts",
+                name: "tblGroceryLists",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StoreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    StoreId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblCarts", x => x.Id);
+                    table.PrimaryKey("PK_tblGroceryLists", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_tblCarts_tblStores_StoreId",
+                        name: "FK_tblGroceryLists_tblStores_StoreId",
                         column: x => x.StoreId,
                         principalTable: "tblStores",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_tblCarts_tblUsers_UserId",
+                        name: "FK_tblGroceryLists_tblUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "tblUsers",
                         principalColumn: "Id",
@@ -137,6 +136,64 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "tblCarts",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StoreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    OrderId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    GroceryListId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tblCarts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_tblCarts_tblGroceryLists_GroceryListId",
+                        column: x => x.GroceryListId,
+                        principalTable: "tblGroceryLists",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_tblCarts_tblOrders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "tblOrders",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_tblCarts_tblStores_StoreId",
+                        column: x => x.StoreId,
+                        principalTable: "tblStores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tblCarts_tblUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "tblUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tblGroceryItems",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    IsCollected = table.Column<bool>(type: "bit", nullable: false),
+                    GroceryListId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tblGroceryItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_tblGroceryItems_tblGroceryLists_GroceryListId",
+                        column: x => x.GroceryListId,
+                        principalTable: "tblGroceryLists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tblOrderItems",
                 columns: table => new
                 {
@@ -163,6 +220,16 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_tblCarts_GroceryListId",
+                table: "tblCarts",
+                column: "GroceryListId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tblCarts_OrderId",
+                table: "tblCarts",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_tblCarts_StoreId",
                 table: "tblCarts",
                 column: "StoreId");
@@ -170,6 +237,21 @@ namespace EPS.Smartcart.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_tblCarts_UserId",
                 table: "tblCarts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tblGroceryItems_GroceryListId",
+                table: "tblGroceryItems",
+                column: "GroceryListId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tblGroceryLists_StoreId",
+                table: "tblGroceryLists",
+                column: "StoreId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tblGroceryLists_UserId",
+                table: "tblGroceryLists",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -205,7 +287,13 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 name: "tblCarts");
 
             migrationBuilder.DropTable(
+                name: "tblGroceryItems");
+
+            migrationBuilder.DropTable(
                 name: "tblOrderItems");
+
+            migrationBuilder.DropTable(
+                name: "tblGroceryLists");
 
             migrationBuilder.DropTable(
                 name: "tblOrders");

@@ -11,6 +11,8 @@ public interface IUnitOfWork
     public IRepository<Product> ProductRepository { get; }
     public IRepository<Order> OrderRepository { get; }
     public IRepository<OrderItem> OrderItemRepository { get; }
+    public IRepository<GroceryList> GroceryListRepository { get; }
+    public IRepository<GroceryItem> GroceryItemRepository { get; }
 
     Task Commit();
 }

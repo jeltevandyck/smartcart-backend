@@ -63,8 +63,65 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("GroceryListId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("OrderId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<string>("StoreId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroceryListId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("StoreId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("tblCarts", (string)null);
+                });
+
+            modelBuilder.Entity("EPS.Smartcart.Domain.GroceryItem", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GroceryListId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsCollected")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroceryListId");
+
+                    b.ToTable("tblGroceryItems", (string)null);
+                });
+
+            modelBuilder.Entity("EPS.Smartcart.Domain.GroceryList", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StoreId")
                         .IsRequired()
@@ -80,7 +137,7 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("tblCarts", (string)null);
+                    b.ToTable("tblGroceryLists", (string)null);
                 });
 
             modelBuilder.Entity("EPS.Smartcart.Domain.Order", b =>
@@ -98,7 +155,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -222,6 +278,14 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
             modelBuilder.Entity("EPS.Smartcart.Domain.Cart", b =>
                 {
+                    b.HasOne("EPS.Smartcart.Domain.GroceryList", "GroceryList")
+                        .WithMany()
+                        .HasForeignKey("GroceryListId");
+
+                    b.HasOne("EPS.Smartcart.Domain.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId");
+
                     b.HasOne("EPS.Smartcart.Domain.Store", "Store")
                         .WithMany()
                         .HasForeignKey("StoreId")
@@ -230,24 +294,49 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
                     b.HasOne("EPS.Smartcart.Domain.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("GroceryList");
+
+                    b.Navigation("Order");
 
                     b.Navigation("Store");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EPS.Smartcart.Domain.Order", b =>
+            modelBuilder.Entity("EPS.Smartcart.Domain.GroceryItem", b =>
                 {
-                    b.HasOne("EPS.Smartcart.Domain.User", "User")
-                        .WithMany("Orders")
+                    b.HasOne("EPS.Smartcart.Domain.GroceryList", null)
+                        .WithMany("GroceryItems")
+                        .HasForeignKey("GroceryListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EPS.Smartcart.Domain.GroceryList", b =>
+                {
+                    b.HasOne("EPS.Smartcart.Domain.Store", "Store")
+                        .WithMany()
+                        .HasForeignKey("StoreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EPS.Smartcart.Domain.User", null)
+                        .WithMany("GroceryLists")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Store");
+                });
+
+            modelBuilder.Entity("EPS.Smartcart.Domain.Order", b =>
+                {
+                    b.HasOne("EPS.Smartcart.Domain.User", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("EPS.Smartcart.Domain.OrderItem", b =>
@@ -291,6 +380,11 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Navigation("Address");
                 });
 
+            modelBuilder.Entity("EPS.Smartcart.Domain.GroceryList", b =>
+                {
+                    b.Navigation("GroceryItems");
+                });
+
             modelBuilder.Entity("EPS.Smartcart.Domain.Order", b =>
                 {
                     b.Navigation("OrderItems");
@@ -298,6 +392,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
             modelBuilder.Entity("EPS.Smartcart.Domain.User", b =>
                 {
+                    b.Navigation("GroceryLists");
+
                     b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
