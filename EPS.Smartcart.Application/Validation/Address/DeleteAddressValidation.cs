@@ -12,5 +12,13 @@ public class DeleteAddressValidation : AbstractValidationHandler<DeleteAddressCo
             .NotEmpty()
             .NotNull()
             .WithMessage("Id is required!");
+
+        RuleFor(x => x.AddressDTO.Id)
+            .MustAsync(async (x, id, cancellationToken) =>
+            {
+                var address = await uow.AddressRepository.GetById(id);
+                return address != null;
+            })
+            .WithMessage("Address does not exist!");
     }
 }

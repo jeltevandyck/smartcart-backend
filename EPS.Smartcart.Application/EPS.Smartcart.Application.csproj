@@ -17,12 +17,4 @@
       <ProjectReference Include="..\EPS.Smartcart.DTO\EPS.Smartcart.DTO.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Validation\Cart" />
-      <Folder Include="Validation\Order" />
-      <Folder Include="Validation\Product" />
-      <Folder Include="Validation\Store" />
-      <Folder Include="Validation\User" />
-    </ItemGroup>
-
 </Project>
