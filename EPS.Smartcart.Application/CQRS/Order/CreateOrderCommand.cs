@@ -34,6 +34,12 @@ public class CreateOrderCommandHandler : AbstractHandler, IRequestHandler<Create
         order.ChangedStatusDate = now;
 
         _uow.OrderRepository.Create(order);
+        
+        var cart = await _uow.CartRepository.GetById(request.OrderDTO.CartId);
+        cart.Order = order;
+
+        _uow.CartRepository.Update(cart);
+        
         await _uow.Commit();
         return order;
     }

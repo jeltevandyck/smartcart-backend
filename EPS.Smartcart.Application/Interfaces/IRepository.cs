@@ -1,4 +1,5 @@
-﻿using EPS.Smartcart.Application.Filters;
+﻿using System.Linq.Expressions;
+using EPS.Smartcart.Application.Filters;
 using EPS.Smartcart.Domain;
 
 namespace EPS.Smartcart.Application.Interfaces;
@@ -10,4 +11,5 @@ public interface IRepository<T> where T : Entity
     T Create(T entity);
     T Update(T entity);
     T Delete(T entity);
+    Task<List<T>> Query(Expression<Func<T, bool>> predicate);
 }

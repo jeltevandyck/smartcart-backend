@@ -1,4 +1,6 @@
-﻿namespace EPS.Smartcart.Domain;
+﻿using System.Text.Json.Serialization;
+
+namespace EPS.Smartcart.Domain;
 
 public class Product : Entity
 {
@@ -10,7 +12,7 @@ public class Product : Entity
     public int Amount { get; set; }
     public DateTime ExperitionDate { get; set; }
     public DateTime? ProductionDate { get; set; }
-    
     public string StoreId { get; set; }
+    [JsonIgnore]
     public Store Store { get; set; }
 }

@@ -1,4 +1,5 @@
 ﻿using EPS.Smartcart.Application.CQRS.Cart;
+using EPS.Smartcart.Application.CQRS.GroceryList;
 using EPS.Smartcart.Application.Interfaces;
 using FluentValidation;
 
@@ -13,16 +14,17 @@ public class UpdateCartValidation : AbstractValidationHandler<UpdateCartCommand>
             .NotNull()
             .WithMessage("Id is required!");
 
-        RuleFor(x => x.CartDTO.StoreId)
-            .NotEmpty()
-            .NotNull()
-            .MustAsync(async (x, storeId, cancellationToken) =>
+        RuleFor(x => x.CartDTO.GroceryListId)
+            .MustAsync(async (x, groceryListId, cancellationToken) =>
             {
-                var store = await uow.StoreRepository.GetById(storeId);
-                return store != null;
+                var groceryList = await uow.GroceryListRepository.GetById(groceryListId);
+                if (groceryList == null) return true;
+
+                var cart = await uow.CartRepository.GetById(x.CartDTO.Id);
+                if (cart == null) return true;
                 
-                return false;
+                return groceryList.StoreId == cart.StoreId;
             })
-            .WithMessage("StoreId is invalid!");
+            .WithMessage("GroceryListId is invalid! GroceryList must belong to the same store as the cart.");
     }
 }

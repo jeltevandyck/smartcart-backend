@@ -12,6 +12,8 @@ public class CartRepository : AbstractRepository<Cart>
 
     public override IQueryable<Cart> Include(IQueryable<Cart> queryable)
     {
+        queryable = queryable.Include(x => x.Order)
+            .AsNoTracking();
         return queryable;
     }
 }

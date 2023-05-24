@@ -1,4 +1,5 @@
-﻿using EPS.Smartcart.Application.Filters;
+﻿using System.Linq.Expressions;
+using EPS.Smartcart.Application.Filters;
 using EPS.Smartcart.Application.Interfaces;
 using EPS.Smartcart.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +30,11 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
 
     public async Task<T> GetById(string id)
     {
-        return await Data.FirstOrDefaultAsync(x => x.Id.Equals(id));
+        var queryable = Data.AsQueryable();
+        
+        queryable = Include(queryable);
+        
+        return await queryable.FirstOrDefaultAsync(x => x.Id.Equals(id));
     }
 
     public T Create(T entity)
@@ -47,6 +52,11 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
     public T Delete(T entity)
     {
         return Data.Remove(entity).Entity;
+    }
+    
+    public Task<List<T>> Query(Expression<Func<T, bool>> predicate)
+    {
+        return Data.Where(predicate).ToListAsync();
     }
 
     public abstract IQueryable<T> Include(IQueryable<T> queryable);

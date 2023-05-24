@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EPS.Smartcart.Application.Interfaces;
+using EPS.Smartcart.Application.Utils;
 using EPS.Smartcart.Domain.Types;
 using EPS.Smartcart.DTO.Cart;
 using MediatR;
@@ -16,7 +17,7 @@ public class CreateCartCommand : IRequest<Domain.Cart>
     }
 }
 
-public class CreateCartCommandHandler : AbstractHandler, IRequestHandler<CreateCartCommand,Domain.Cart>
+public class CreateCartCommandHandler : AbstractHandler, IRequestHandler<CreateCartCommand, Domain.Cart>
 {
     public CreateCartCommandHandler(IUnitOfWork uow, IMapper mapper) : base(uow, mapper)
     {
@@ -28,7 +29,13 @@ public class CreateCartCommandHandler : AbstractHandler, IRequestHandler<CreateC
 
         cart.Id = Guid.NewGuid().ToString();
         cart.Status = CartStatus.STANDBY;
-        cart.Code = Guid.NewGuid().ToString();
+
+        var result = new List<Domain.Cart>();
+        do
+        {
+            cart.Code = CodeUtil.Generate(5);
+            result = await _uow.CartRepository.Query(x => x.Code == cart.Code);
+        } while (result != null && result.Count > 0);
 
         _uow.CartRepository.Create(cart);
         await _uow.Commit();

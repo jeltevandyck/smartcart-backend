@@ -1,7 +1,9 @@
 ﻿using EPS.Smartcart.Application.CQRS.Order;
+using EPS.Smartcart.Application.CQRS.OrderItem;
 using EPS.Smartcart.Application.Filters;
 using EPS.Smartcart.Domain;
 using EPS.Smartcart.DTO.Order;
+using EPS.Smartcart.DTO.OrderItem;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +47,27 @@ public class OrderController : AbstractController
     public async Task<IActionResult> Delete([FromBody] DeleteOrderDTO order)
     {
         var result = await _mediator.Send(new DeleteOrderCommand(order));
+        return Ok(result);
+    }
+    
+    [HttpPost("product")]
+    public async Task<IActionResult> AddItem([FromBody] CreateOrderItemDTO item)
+    {
+        var result = await _mediator.Send(new CreateOrderItemCommand(item));
+        return Ok(result);
+    }
+    
+    [HttpPut("product")]
+    public async Task<IActionResult> UpdateItem([FromBody] UpdateOrderItemDTO item)
+    {
+        var result = await _mediator.Send(new UpdateOrderItemCommand(item));
+        return Ok(result);
+    }
+    
+    [HttpDelete("product")]
+    public async Task<IActionResult> RemoveItem([FromBody] DeleteOrderItemDTO item)
+    {
+        var result = await _mediator.Send(new DeleteOrderItemCommand(item));
         return Ok(result);
     }
 }

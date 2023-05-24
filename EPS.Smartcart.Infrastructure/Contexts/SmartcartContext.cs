@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using EPS.Smartcart.Domain;
+using EPS.Smartcart.Infrastructure.Seeding;
 using Microsoft.EntityFrameworkCore;
 
 namespace EPS.Smartcart.Infrastructure.Contexts;
@@ -29,5 +30,14 @@ public class SmartcartContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        
+        //TODO Seeding
+        UserSeeding.Seed(modelBuilder.Entity<User>());
+        AddressSeeding.Seed(modelBuilder.Entity<Address>());
+        StoreSeeding.Seed(modelBuilder.Entity<Store>());
+        ProductSeeding.Seed(modelBuilder.Entity<Product>());
+        GroceryListSeeding.Seed(modelBuilder.Entity<GroceryList>());
+        CartSeeding.Seed(modelBuilder.Entity<Cart>());
+        OrderSeeding.Seed(modelBuilder.Entity<Order>());
     }
 }

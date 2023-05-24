@@ -24,10 +24,12 @@ public class UpdateOrderCommandHandler : AbstractHandler, IRequestHandler<Update
     public async Task<Domain.Order> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
     {
         var order = await _uow.OrderRepository.GetById(request.OrderDTO.Id);
-        
+        var cart = await _uow.CartRepository.GetById(order.CartId);
+
         order = _mapper.Map(request.OrderDTO, order);
         
         _uow.OrderRepository.Update(order);
+        
         await _uow.Commit();
         return order;
     }

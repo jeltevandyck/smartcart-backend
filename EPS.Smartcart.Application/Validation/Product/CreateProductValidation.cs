@@ -20,22 +20,18 @@ public class CreateProductValidation : AbstractValidationHandler<CreateProductCo
             .WithMessage("Description is required!");
 
         RuleFor(x => x.ProductDTO.Price)
-            .NotEmpty()
             .NotNull()
             .WithMessage("Price is required!");
 
         RuleFor(x => x.ProductDTO.Discount)
-            .NotEmpty()
             .NotNull()
             .WithMessage("Discount is required!");
 
         RuleFor(x => x.ProductDTO.DiscountPercentage)
-            .NotEmpty()
             .NotNull()
             .WithMessage("DiscountPercentage is required!");
 
         RuleFor(x => x.ProductDTO.Amount)
-            .NotEmpty()
             .NotNull()
             .WithMessage("Amount is required!");
 

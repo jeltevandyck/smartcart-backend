@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EPS.Smartcart.Application.Interfaces;
+using EPS.Smartcart.Application.Utils;
 using EPS.Smartcart.DTO.Cart;
 using MediatR;
 
@@ -27,7 +28,7 @@ public class UpdateCartCommandHandler : AbstractHandler, IRequestHandler<UpdateC
         
         if (request.CartDTO.ChangeCode)
         {
-            cart.Code = Guid.NewGuid().ToString();
+            cart.Code = CodeUtil.Generate(5);
         }
 
         cart = _mapper.Map(request.CartDTO, cart);
