@@ -19,7 +19,12 @@ public static class Registrator
 
     public static IServiceCollection RegisterDbContext(this IServiceCollection service)
     {
-        service.AddDbContext<SmartcartContext>(options => options.UseSqlServer("name=ConnectionStrings:smartcart_db"));
+        service.AddDbContext<SmartcartContext>(options =>
+        {
+            options.UseSqlServer("name=ConnectionStrings:smartcart_db");
+            options.EnableSensitiveDataLogging();
+        });
+
         return service;
     }
 

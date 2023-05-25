@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EPS.Smartcart.Application.Interfaces;
 using EPS.Smartcart.Application.Utils;
+using EPS.Smartcart.Domain.Types;
 using EPS.Smartcart.DTO.Cart;
 using MediatR;
 
@@ -26,12 +27,8 @@ public class UpdateCartCommandHandler : AbstractHandler, IRequestHandler<UpdateC
     {
         var cart = await _uow.CartRepository.GetById(request.CartDTO.Id);
         
-        if (request.CartDTO.ChangeCode)
-        {
-            cart.Code = CodeUtil.Generate(5);
-        }
-
         cart = _mapper.Map(request.CartDTO, cart);
+        
         cart = _uow.CartRepository.Update(cart);
         await _uow.Commit();
         

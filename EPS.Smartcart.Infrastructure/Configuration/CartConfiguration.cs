@@ -1,6 +1,8 @@
 ﻿using EPS.Smartcart.Domain;
+using EPS.Smartcart.Domain.Types;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EPS.Smartcart.Infrastructure.Configuration;
 
@@ -10,6 +12,8 @@ public class CartConfiguration : IEntityTypeConfiguration<Cart>
     {
         builder.ToTable("tblCarts");
         builder.HasKey(x => x.Id);
+
+        builder.Property(x => x.Status).HasConversion(new EnumToStringConverter<CartStatus>());
         
         builder.HasOne(x => x.Store);
         builder.HasOne(x => x.Order);

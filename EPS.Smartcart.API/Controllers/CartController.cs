@@ -49,4 +49,18 @@ public class CartController : AbstractController
         var result = await _mediator.Send(new DeleteCartCommand(cart));
         return Ok(result);
     }
+    
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] RegisterCartDTO cart)
+    {
+        var result = await _mediator.Send(new RegisterCartQuery(cart));
+        return Ok(result);
+    }
+    
+    [HttpPost("unregister")]
+    public async Task<IActionResult> Unregister([FromBody] UnregisterCartDTO cart)
+    {
+        var result = await _mediator.Send(new UnregisterCartQuery(cart));
+        return Ok(result);
+    }
 }

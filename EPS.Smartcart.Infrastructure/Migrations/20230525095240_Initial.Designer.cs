@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EPS.Smartcart.Infrastructure.Migrations
 {
     [DbContext(typeof(SmartcartContext))]
-    [Migration("20230523150234_Initial")]
+    [Migration("20230525095240_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -119,8 +119,9 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<string>("GroceryListId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StoreId")
                         .IsRequired()
@@ -139,25 +140,29 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         new
                         {
                             Id = "306545b0-4457-4fd7-8966-f8fe25999b47",
-                            Status = 1,
+                            Code = "92172663",
+                            Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "e6d39016-4c8e-479e-84b6-5c6c01acac4e",
-                            Status = 1,
+                            Code = "45733205",
+                            Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "39791b70-3223-42cb-b345-be7be62ffa81",
-                            Status = 1,
+                            Code = "59731860",
+                            Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "6af975e1-ef09-4dad-8c9b-1e329afe91fc",
-                            Status = 1,
+                            Code = "95630370",
+                            Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         });
                 });
@@ -237,8 +242,9 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");

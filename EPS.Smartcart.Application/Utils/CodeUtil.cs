@@ -7,7 +7,7 @@ public class CodeUtil
     public static string Generate(int length)
     {
         Random random = new Random();
-        string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        string chars = "0123456789";
         StringBuilder codeBuilder = new StringBuilder();
 
         for (int i = 0; i < length; i++)
