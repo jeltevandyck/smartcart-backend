@@ -36,7 +36,7 @@ public class CreateOrderCommandHandler : AbstractHandler, IRequestHandler<Create
         _uow.OrderRepository.Create(order);
         
         var cart = await _uow.CartRepository.GetById(request.OrderDTO.CartId);
-        cart.Order = order;
+        cart.OrderId = order.Id;
 
         _uow.CartRepository.Update(cart);
         

@@ -66,6 +66,28 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "tblOrders",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ChangedStatusDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CartId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tblOrders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_tblOrders_tblUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "tblUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tblCarts",
                 columns: table => new
                 {
@@ -74,6 +96,7 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StoreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OrderId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GroceryListId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -135,33 +158,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         name: "FK_tblProducts_tblStores_StoreId",
                         column: x => x.StoreId,
                         principalTable: "tblStores",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "tblOrders",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ChangedStatusDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CartId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tblOrders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_tblOrders_tblCarts_CartId",
-                        column: x => x.CartId,
-                        principalTable: "tblCarts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_tblOrders_tblUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "tblUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -248,13 +244,13 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "tblCarts",
-                columns: new[] { "Id", "Code", "GroceryListId", "Status", "StoreId", "UserId" },
+                columns: new[] { "Id", "Code", "GroceryListId", "OrderId", "Status", "StoreId", "UserId" },
                 values: new object[,]
                 {
-                    { "306545b0-4457-4fd7-8966-f8fe25999b47", "92172663", null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
-                    { "39791b70-3223-42cb-b345-be7be62ffa81", "59731860", null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
-                    { "6af975e1-ef09-4dad-8c9b-1e329afe91fc", "95630370", null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
-                    { "e6d39016-4c8e-479e-84b6-5c6c01acac4e", "45733205", null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null }
+                    { "306545b0-4457-4fd7-8966-f8fe25999b47", "27095215", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
+                    { "39791b70-3223-42cb-b345-be7be62ffa81", "43548697", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
+                    { "6af975e1-ef09-4dad-8c9b-1e329afe91fc", "22273650", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
+                    { "e6d39016-4c8e-479e-84b6-5c6c01acac4e", "55951834", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null }
                 });
 
             migrationBuilder.InsertData(
@@ -350,13 +346,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tblOrders_CartId",
-                table: "tblOrders",
-                column: "CartId",
-                unique: true,
-                filter: "[CartId] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_tblOrders_UserId",
                 table: "tblOrders",
                 column: "UserId");
@@ -376,6 +365,9 @@ namespace EPS.Smartcart.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "tblCarts");
+
+            migrationBuilder.DropTable(
                 name: "tblGroceryItems");
 
             migrationBuilder.DropTable(
@@ -389,9 +381,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "tblProducts");
-
-            migrationBuilder.DropTable(
-                name: "tblCarts");
 
             migrationBuilder.DropTable(
                 name: "tblUsers");

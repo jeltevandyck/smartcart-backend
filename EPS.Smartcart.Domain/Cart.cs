@@ -11,6 +11,6 @@ public class Cart : Entity
     [JsonIgnore]
     public Store Store { get; set; }
     public string? UserId { get; set; }
-    public Order Order { get; set; }
+    public string? OrderId { get; set; }
     public string? GroceryListId { get; set; }
 }

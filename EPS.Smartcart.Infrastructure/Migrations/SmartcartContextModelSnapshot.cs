@@ -116,6 +116,9 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<string>("GroceryListId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OrderId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -137,28 +140,28 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         new
                         {
                             Id = "306545b0-4457-4fd7-8966-f8fe25999b47",
-                            Code = "92172663",
+                            Code = "27095215",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "e6d39016-4c8e-479e-84b6-5c6c01acac4e",
-                            Code = "45733205",
+                            Code = "55951834",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "39791b70-3223-42cb-b345-be7be62ffa81",
-                            Code = "59731860",
+                            Code = "43548697",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "6af975e1-ef09-4dad-8c9b-1e329afe91fc",
-                            Code = "95630370",
+                            Code = "22273650",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         });
@@ -231,7 +234,7 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CartId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ChangedStatusDate")
                         .HasColumnType("datetime2");
@@ -247,10 +250,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CartId")
-                        .IsUnique()
-                        .HasFilter("[CartId] IS NOT NULL");
 
                     b.HasIndex("UserId");
 
@@ -1120,10 +1119,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
             modelBuilder.Entity("EPS.Smartcart.Domain.Order", b =>
                 {
-                    b.HasOne("EPS.Smartcart.Domain.Cart", null)
-                        .WithOne("Order")
-                        .HasForeignKey("EPS.Smartcart.Domain.Order", "CartId");
-
                     b.HasOne("EPS.Smartcart.Domain.User", null)
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
@@ -1169,12 +1164,6 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Address");
-                });
-
-            modelBuilder.Entity("EPS.Smartcart.Domain.Cart", b =>
-                {
-                    b.Navigation("Order")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EPS.Smartcart.Domain.GroceryList", b =>

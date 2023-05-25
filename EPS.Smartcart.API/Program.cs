@@ -28,6 +28,9 @@ builder.Services.AddControllers().AddJsonOptions(x =>
     x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
 
+var domain = $"https://{builder.Configuration["Auth0:Domain"]}/";
+var audience = builder.Configuration["Auth0:Audience"];
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

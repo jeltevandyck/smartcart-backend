@@ -16,6 +16,5 @@ public class CartConfiguration : IEntityTypeConfiguration<Cart>
         builder.Property(x => x.Status).HasConversion(new EnumToStringConverter<CartStatus>());
         
         builder.HasOne(x => x.Store);
-        builder.HasOne(x => x.Order);
     }
 }
