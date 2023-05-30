@@ -38,15 +38,5 @@ public class UpdateCartValidation : AbstractValidationHandler<UpdateCartCommand>
             })
             .WithMessage("GroceryListId is invalid! GroceryList must belong to the same store as the cart.");
 
-        RuleFor(x => x.CartDTO)
-            .MustAsync(async (x, cancellationToken) =>
-            {
-                var cart = await _uow.CartRepository.GetById(x.Id);
-                if (cart == null) return true;
-
-                return !(String.IsNullOrEmpty(x.UserId) && !String.IsNullOrEmpty(x.GroceryListId) && cart.Status == CartStatus.ACTIVE);
-            })
-            .WithMessage("You can't remove the user from an active cart!");
-
     }
 }

@@ -5,7 +5,7 @@ using EPS.Smartcart.Application.Mappers;
 using EPS.Smartcart.DTO.Address;
 using EPS.Smartcart.Tests.Mocks;
 
-namespace EPS.Smartcart.Tests.CQRS;
+namespace EPS.Smartcart.Tests.CQRS.Address;
 
 [TestClass]
 public class CreateAddressCommandTest : AbstractCQRSHelper<CreateAddressCommandHandler>

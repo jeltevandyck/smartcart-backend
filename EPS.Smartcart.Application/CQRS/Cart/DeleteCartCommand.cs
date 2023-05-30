@@ -26,7 +26,7 @@ public class DeleteCartCommandHandler : AbstractHandler, IRequestHandler<DeleteC
         var cart = await _uow.CartRepository.GetById(request.CartDTO.Id);
 
         cart = _mapper.Map(request.CartDTO, cart);
-        cart = _uow.CartRepository.Delete(cart);
+        _uow.CartRepository.Delete(cart);
         await _uow.Commit();
 
         return cart;

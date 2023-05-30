@@ -1,7 +1,7 @@
 ﻿using EPS.Smartcart.Application.CQRS.Address;
 using EPS.Smartcart.DTO.Address;
 
-namespace EPS.Smartcart.Tests.CQRS;
+namespace EPS.Smartcart.Tests.CQRS.Address;
 
 [TestClass]
 public class UpdateAddressCommandTest : AbstractCQRSHelper<UpdateAddressCommandHandler>

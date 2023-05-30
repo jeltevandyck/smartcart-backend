@@ -2,7 +2,7 @@
 using EPS.Smartcart.Application.Filters;
 using EPS.Smartcart.Domain;
 
-namespace EPS.Smartcart.Tests.CQRS;
+namespace EPS.Smartcart.Tests.CQRS.Address;
 
 [TestClass]
 public class GetAllAddressesQueryTest : AbstractCQRSHelper<GetAllAddressesQueryHandler>
@@ -10,7 +10,7 @@ public class GetAllAddressesQueryTest : AbstractCQRSHelper<GetAllAddressesQueryH
     [TestMethod]
     public async Task GetAllAddresses()
     {
-        var query = new GetAllAddressesQuery(new AddressFilter(), new PaginationFilter<Address>());
+        var query = new GetAllAddressesQuery(new AddressFilter(), new PaginationFilter<Smartcart.Domain.Address>());
 
         var result = await _handler.Handle(query, CancellationToken.None);
 

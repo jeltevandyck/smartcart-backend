@@ -4,7 +4,7 @@ using EPS.Smartcart.Domain;
 using EPS.Smartcart.DTO.Address;
 using EPS.Smartcart.Tests.Mocks;
 
-namespace EPS.Smartcart.Tests.CQRS;
+namespace EPS.Smartcart.Tests.CQRS.Address;
 
 [TestClass]
 public class DeleteAddressCommandTest : AbstractCQRSHelper<DeleteAddressCommandHandler>

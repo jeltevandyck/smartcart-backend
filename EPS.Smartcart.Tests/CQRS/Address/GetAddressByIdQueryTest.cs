@@ -1,6 +1,6 @@
 ﻿using EPS.Smartcart.Application.CQRS.Address;
 
-namespace EPS.Smartcart.Tests.CQRS;
+namespace EPS.Smartcart.Tests.CQRS.Address;
 
 [TestClass]
 public class GetAddressByIdQueryTest : AbstractCQRSHelper<GetAddressByIdQueryHandler>

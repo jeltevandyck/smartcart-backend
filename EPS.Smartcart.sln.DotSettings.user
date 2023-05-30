@@ -1,13 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/ActualSeverity/@EntryValue">ERROR</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ce2ce11c_002D7d7c_002D4221_002D985e_002Da6b2f7d14c70/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from CreateAddressCommandTest.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::54429BB1-BF72-4E70-8D6C-FEFC1F8442AA::net7.0::EPS.Smartcart.Tests.CQRS.CreateAddressCommandTest.CreateAddress&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::54429BB1-BF72-4E70-8D6C-FEFC1F8442AA::net7.0::EPS.Smartcart.Tests.CQRS.DeleteAddressCommandTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::54429BB1-BF72-4E70-8D6C-FEFC1F8442AA::net7.0::EPS.Smartcart.Tests.CQRS.GetAllAddressesQueryTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::54429BB1-BF72-4E70-8D6C-FEFC1F8442AA::net7.0::EPS.Smartcart.Tests.CQRS.GetAddressByIdQueryTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1265ff0b_002Db09a_002D4d7b_002D87ab_002D5576a92350f9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;And&gt;&#xD;
+    &lt;Namespace&gt;EPS.Smartcart.Tests&lt;/Namespace&gt;&#xD;
+    &lt;Project Location="C:\Users\Jelte\Documents\Projects\EPS\shoppingcart-backend\EPS.Smartcart.Tests" Presentation="&amp;lt;EPS.Smartcart.Tests&amp;gt;" /&gt;&#xD;
+  &lt;/And&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	
+	
 	
 	
 	</wpf:ResourceDictionary>
