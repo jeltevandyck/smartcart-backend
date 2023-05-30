@@ -21,16 +21,4 @@
       <ProjectReference Include="..\EPS.Smartcart.Domain\EPS.Smartcart.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Remove="CQRS\GroceryList\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="CQRS\GroceryList\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="CQRS\GroceryList\**" />
-    </ItemGroup>
-
 </Project>
