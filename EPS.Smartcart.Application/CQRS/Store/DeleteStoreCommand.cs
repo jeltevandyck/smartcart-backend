@@ -26,7 +26,7 @@ public class DeleteStoreCommandHandler : AbstractHandler, IRequestHandler<Delete
         var store = await _uow.StoreRepository.GetById(request.StoreDTO.Id);
         
         store = _mapper.Map(request.StoreDTO, store);
-        store = _uow.StoreRepository.Delete(store);
+        _uow.StoreRepository.Delete(store);
         await _uow.Commit();
         
         return store;

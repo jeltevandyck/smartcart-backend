@@ -17,9 +17,9 @@ public class GetAllUsersQuery : IRequest<IEnumerable<Domain.User>>
     }
 }
 
-public class GetAllUsersCommandHandler : AbstractHandler, IRequestHandler<GetAllUsersQuery, IEnumerable<Domain.User>>
+public class GetAllUsersQueryHandler : AbstractHandler, IRequestHandler<GetAllUsersQuery, IEnumerable<Domain.User>>
 {
-    public GetAllUsersCommandHandler(IUnitOfWork uow, IMapper mapper) : base(uow, mapper)
+    public GetAllUsersQueryHandler(IUnitOfWork uow, IMapper mapper) : base(uow, mapper)
     {
     }
 

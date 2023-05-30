@@ -26,7 +26,7 @@ public class DeleteUserCommandHandler : AbstractHandler, IRequestHandler<DeleteU
         var user = await _uow.UserRepository.GetById(request.UserDTO.Id);
         
         user = _mapper.Map(request.UserDTO, user);
-        user = _uow.UserRepository.Delete(user);
+        _uow.UserRepository.Delete(user);
         await _uow.Commit();
 
         return user;
