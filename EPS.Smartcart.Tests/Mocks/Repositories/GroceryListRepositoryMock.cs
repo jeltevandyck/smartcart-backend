@@ -9,6 +9,23 @@ public class GroceryListRepositoryMock : AbstractMockRepository<GroceryListFilte
     public override List<GroceryList> CreateData()
     {
         var groceryLists = new List<GroceryList>();
-           return groceryLists;
+        
+        groceryLists.Add(new GroceryList
+        {
+            Id = "c0a80101-0000-0000-0000-000000000001",
+            UserId = "c0a80101-0000-0000-0000-000000000001",
+            StoreId = "c0a80101-0000-0000-0000-000000000001",
+            Note = "Test"
+        });
+        
+        groceryLists.Add(new GroceryList
+        {
+            Id = "c0a80101-0000-0000-0000-000000000002",
+            UserId = "c0a80101-0000-0000-0000-000000000001",
+            StoreId = "c0a80101-0000-0000-0000-000000000001",
+            Note = "Test"
+        });
+        
+        return groceryLists;
     }
 }
