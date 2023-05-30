@@ -26,7 +26,7 @@ public class DeleteProductCommandHandler : AbstractHandler, IRequestHandler<Dele
         var product = await _uow.ProductRepository.GetById(request.ProductDTO.Id);
         
         product = _mapper.Map(request.ProductDTO, product);
-        product = _uow.ProductRepository.Delete(product);
+        _uow.ProductRepository.Delete(product);
         await _uow.Commit();
         
         return product;
