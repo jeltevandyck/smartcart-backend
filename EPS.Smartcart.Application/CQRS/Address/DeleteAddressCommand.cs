@@ -26,7 +26,7 @@ public class DeleteAddressCommandHandler : AbstractHandler, IRequestHandler<Dele
         var address = await _uow.AddressRepository.GetById(request.AddressDTO.Id);
 
         address = _mapper.Map(request.AddressDTO, address);
-        address = _uow.AddressRepository.Delete(address);
+        _uow.AddressRepository.Delete(address);
         await _uow.Commit();
 
         return address;
