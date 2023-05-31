@@ -12,5 +12,15 @@ public class UpdateGroceryListValidation : AbstractValidationHandler<UpdateGroce
             .NotEmpty()
             .NotNull()
             .WithMessage("Id is required!");
+
+        RuleFor(x => x.GroceryListDTO.UserId)
+            .NotEmpty()
+            .NotNull()
+            .WithMessage("UserId is required!");
+
+        RuleFor(x => x.GroceryListDTO.StoreId)
+            .NotEmpty()
+            .NotNull()
+            .WithMessage("StoreId is required!");
     }
 }

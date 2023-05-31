@@ -12,5 +12,10 @@ public class CreateGroceryItemValidation : AbstractValidationHandler<CreateGroce
             .NotEmpty()
             .NotNull()
             .WithMessage("Amount is required!");
+        
+        RuleFor(x => x.GroceryItemDTO.ProductId)
+            .NotEmpty()
+            .NotNull()
+            .WithMessage("ProductId is required!");
     }
 }

@@ -21,8 +21,4 @@
       <ProjectReference Include="..\EPS.Smartcart.Domain\EPS.Smartcart.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Validation\Cart\" />
-    </ItemGroup>
-
 </Project>
