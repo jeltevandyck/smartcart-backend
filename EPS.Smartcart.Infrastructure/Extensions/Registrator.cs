@@ -21,7 +21,7 @@ public static class Registrator
     {
         service.AddDbContext<SmartcartContext>(options =>
         {
-            options.UseSqlServer("name=ConnectionStrings:smartcart_db");
+            options.UseSqlServer("name=ConnectionStrings:smartcart_db_gcloud");
             options.EnableSensitiveDataLogging();
         });
 

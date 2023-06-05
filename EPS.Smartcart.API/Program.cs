@@ -35,9 +35,16 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    //Use urls
+    app.Urls.Add("https://localhost:5000");
 }
+else
+{
+    app.Urls.Add("https://34.140.176.244:5000");
+}
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseErrorHandlingMiddleware();
