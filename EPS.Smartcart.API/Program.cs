@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.Urls.Add("https://34.140.176.244:5000");
+    app.Urls.Add("http://34.140.176.244:5000");
 }
 
 app.UseSwagger();
