@@ -27,7 +27,15 @@ public class RegisterCartQueryHandler : AbstractHandler, IRequestHandler<Registe
         var cart = await _uow.CartRepository.GetById(request.RegisterCartDTO.Id);
 
         cart.Status = CartStatus.ACTIVE;
-        cart.UserId = request.RegisterCartDTO.UserId;
+
+        if (!String.IsNullOrEmpty(request.RegisterCartDTO.UserId))
+        {
+            cart.UserId = request.RegisterCartDTO.UserId;
+        }
+        else
+        {
+            cart.UserId = null;
+        }
 
         cart = _uow.CartRepository.Update(cart);
         await _uow.Commit();

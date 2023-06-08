@@ -47,4 +47,11 @@ public class ProductController : AbstractController
         var result = await _mediator.Send(new DeleteProductCommand(product));
         return Ok(result);
     }
+    
+    [HttpGet("barcode")]
+    public async Task<IActionResult> GetByBarcode([FromQuery] GetProductByBarcodeDTO getProductByBarcodeDTO)
+    {
+        var product = await _mediator.Send(new GetProductByBarcodeQuery(getProductByBarcodeDTO));
+        return Ok(product);
+    }
 }

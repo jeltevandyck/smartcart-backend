@@ -21,7 +21,8 @@ public static class ProductSeeding
                 Amount = 105,
                 ExperitionDate = DateTime.ParseExact("2023-07-05", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "885419ca-7a02-4d45-b384-7a750189a70b",
@@ -34,7 +35,9 @@ public static class ProductSeeding
                 Amount = 2,
                 ExperitionDate = DateTime.ParseExact("2023-06-26", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
+                
             }, new Product
             {
                 Id = "15194bd5-c162-4496-86ba-4a009cbfd1f6",
@@ -47,7 +50,8 @@ public static class ProductSeeding
                 Amount = 249,
                 ExperitionDate = DateTime.ParseExact("2023-07-24", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "22e7e15a-56eb-4d82-9f52-5ea6aac6ebda",
@@ -60,7 +64,8 @@ public static class ProductSeeding
                 Amount = 49,
                 ExperitionDate = DateTime.ParseExact("2023-07-06", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "0d8b65a5-1798-48c3-ab1e-5a508fde6035",
@@ -73,7 +78,8 @@ public static class ProductSeeding
                 Amount = 137,
                 ExperitionDate = DateTime.ParseExact("2023-07-26", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "25eafe7a-44aa-4278-9867-3cd6c1de77b5",
@@ -86,7 +92,8 @@ public static class ProductSeeding
                 Amount = 29,
                 ExperitionDate = DateTime.ParseExact("2023-07-09", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "344ab9f6-db86-4043-a44d-0e84783e3b3f",
@@ -99,7 +106,8 @@ public static class ProductSeeding
                 Amount = 219,
                 ExperitionDate = DateTime.ParseExact("2023-07-09", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "340d1c07-7db0-4d4b-b4ea-9459770eca72",
@@ -112,7 +120,8 @@ public static class ProductSeeding
                 Amount = 70,
                 ExperitionDate = DateTime.ParseExact("2023-07-09", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "dedf459e-07b8-4e96-b258-8423a3c25573",
@@ -125,7 +134,8 @@ public static class ProductSeeding
                 Amount = 106,
                 ExperitionDate = DateTime.ParseExact("2023-07-16", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "a2afc7fe-47e1-40c0-a2ea-6205f7f60bcb",
@@ -138,7 +148,8 @@ public static class ProductSeeding
                 Amount = 131,
                 ExperitionDate = DateTime.ParseExact("2023-06-23", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "58dd95e2-b27e-4243-bfe2-4ec8f7297357",
@@ -151,7 +162,8 @@ public static class ProductSeeding
                 Amount = 207,
                 ExperitionDate = DateTime.ParseExact("2023-07-21", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "651dd684-4dc5-4250-ad5d-01b2fc41d444",
@@ -164,7 +176,8 @@ public static class ProductSeeding
                 Amount = 213,
                 ExperitionDate = DateTime.ParseExact("2023-06-27", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "e5ae6e4f-73c0-456f-adf4-2e12f1d4beae",
@@ -177,7 +190,8 @@ public static class ProductSeeding
                 Amount = 249,
                 ExperitionDate = DateTime.ParseExact("2023-07-26", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "d8e0406f-e747-4a57-b333-30ce03ed4720",
@@ -190,7 +204,8 @@ public static class ProductSeeding
                 Amount = 139,
                 ExperitionDate = DateTime.ParseExact("2023-07-03", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "d37d4aa7-7a21-4c7f-8367-d89e530edee0",
@@ -203,7 +218,8 @@ public static class ProductSeeding
                 Amount = 37,
                 ExperitionDate = DateTime.ParseExact("2023-07-20", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "a13a20df-3a91-46c2-a974-cc870f332b3d",
@@ -216,7 +232,8 @@ public static class ProductSeeding
                 Amount = 57,
                 ExperitionDate = DateTime.ParseExact("2023-06-24", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "6721d8ee-9f3f-470f-9d90-9f819117b20c",
@@ -229,7 +246,8 @@ public static class ProductSeeding
                 Amount = 174,
                 ExperitionDate = DateTime.ParseExact("2023-07-19", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "4e9be7e7-bc35-4960-92df-6e77f68544c5",
@@ -242,7 +260,8 @@ public static class ProductSeeding
                 Amount = 136,
                 ExperitionDate = DateTime.ParseExact("2023-07-08", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "0bef168e-20d1-46e2-b8d8-d50c1db8011b",
@@ -255,7 +274,8 @@ public static class ProductSeeding
                 Amount = 213,
                 ExperitionDate = DateTime.ParseExact("2023-07-06", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "fc5e1c38-ce5a-487b-bf60-2117ddc14e65",
@@ -268,7 +288,8 @@ public static class ProductSeeding
                 Amount = 15,
                 ExperitionDate = DateTime.ParseExact("2023-07-03", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "3a89077a-6857-4e06-9372-df755fb8e051",
@@ -281,7 +302,8 @@ public static class ProductSeeding
                 Amount = 74,
                 ExperitionDate = DateTime.ParseExact("2023-07-29", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "a12fb8f0-8381-48a9-bd9a-bd509765af72",
@@ -294,7 +316,8 @@ public static class ProductSeeding
                 Amount = 134,
                 ExperitionDate = DateTime.ParseExact("2023-07-19", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "a2b27d13-c84e-4be3-828a-60e57fc70890",
@@ -307,7 +330,8 @@ public static class ProductSeeding
                 Amount = 211,
                 ExperitionDate = DateTime.ParseExact("2023-07-02", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "fd460b9c-dce5-40ca-8e12-dc61f15327b1",
@@ -320,7 +344,8 @@ public static class ProductSeeding
                 Amount = 91,
                 ExperitionDate = DateTime.ParseExact("2023-07-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "c6cb47f3-f6cb-4bfa-9cf9-d53002b20671",
@@ -333,7 +358,8 @@ public static class ProductSeeding
                 Amount = 244,
                 ExperitionDate = DateTime.ParseExact("2023-07-14", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "b33e92fd-58c3-4e4c-a6df-8150cb7ae3ae",
@@ -346,7 +372,8 @@ public static class ProductSeeding
                 Amount = 33,
                 ExperitionDate = DateTime.ParseExact("2023-07-09", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "fb5dc2fc-1c32-4024-881c-d7ac57d8f00f",
@@ -359,7 +386,8 @@ public static class ProductSeeding
                 Amount = 170,
                 ExperitionDate = DateTime.ParseExact("2023-06-23", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "16344425-ac2b-4af2-abf8-17323b6afa07",
@@ -372,7 +400,8 @@ public static class ProductSeeding
                 Amount = 203,
                 ExperitionDate = DateTime.ParseExact("2023-07-02", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "6c3cc07a-644c-49f4-80e1-a29af75efe24",
@@ -385,7 +414,8 @@ public static class ProductSeeding
                 Amount = 63,
                 ExperitionDate = DateTime.ParseExact("2023-07-27", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "18285642-5ad6-4e03-82a9-1b3cfc80ca77",
@@ -398,7 +428,8 @@ public static class ProductSeeding
                 Amount = 190,
                 ExperitionDate = DateTime.ParseExact("2023-07-28", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "1866ec5a-addc-4129-93f7-b8ef3cebbe6d",
@@ -411,7 +442,8 @@ public static class ProductSeeding
                 Amount = 20,
                 ExperitionDate = DateTime.ParseExact("2023-07-16", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "12a8e26e-5164-4330-99d5-abbbb574eb29",
@@ -424,7 +456,8 @@ public static class ProductSeeding
                 Amount = 44,
                 ExperitionDate = DateTime.ParseExact("2023-07-01", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "264583d4-54b9-49d7-a20e-9c5df529567d",
@@ -437,7 +470,8 @@ public static class ProductSeeding
                 Amount = 231,
                 ExperitionDate = DateTime.ParseExact("2023-07-02", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "bf76c775-f74e-43fb-818d-3c3ee56da821",
@@ -450,7 +484,8 @@ public static class ProductSeeding
                 Amount = 118,
                 ExperitionDate = DateTime.ParseExact("2023-07-25", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "b30a9735-8a23-4b7d-b72d-989951837cc2",
@@ -463,7 +498,8 @@ public static class ProductSeeding
                 Amount = 3,
                 ExperitionDate = DateTime.ParseExact("2023-06-28", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "e82119fe-843d-40cb-8af8-6425a61ec23b",
@@ -476,7 +512,8 @@ public static class ProductSeeding
                 Amount = 84,
                 ExperitionDate = DateTime.ParseExact("2023-07-03", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "238d8979-1cec-46b1-8c36-bd36158f2b98",
@@ -489,7 +526,8 @@ public static class ProductSeeding
                 Amount = 72,
                 ExperitionDate = DateTime.ParseExact("2023-07-03", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "e486b4f8-449a-4824-9b27-c489d527cae7",
@@ -502,7 +540,8 @@ public static class ProductSeeding
                 Amount = 92,
                 ExperitionDate = DateTime.ParseExact("2023-06-29", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "c9c55c40-d5da-438c-a8c9-8c72b28db013",
@@ -515,7 +554,8 @@ public static class ProductSeeding
                 Amount = 53,
                 ExperitionDate = DateTime.ParseExact("2023-07-13", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "760509b0-74f3-4f0a-9118-8a74d15f8033",
@@ -528,7 +568,8 @@ public static class ProductSeeding
                 Amount = 94,
                 ExperitionDate = DateTime.ParseExact("2023-07-16", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "0000ff68-26cf-473e-a2f3-50c0fefef85d",
@@ -541,7 +582,8 @@ public static class ProductSeeding
                 Amount = 41,
                 ExperitionDate = DateTime.ParseExact("2023-06-27", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "8a54106a-71ba-4add-a62a-5cd7abcc768f",
@@ -554,7 +596,8 @@ public static class ProductSeeding
                 Amount = 69,
                 ExperitionDate = DateTime.ParseExact("2023-07-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "edbd13c6-fabe-452a-b8d1-4690eb7d3bce",
@@ -567,7 +610,8 @@ public static class ProductSeeding
                 Amount = 173,
                 ExperitionDate = DateTime.ParseExact("2023-07-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "858aeeaa-4513-4106-9663-123d5c98669a",
@@ -580,7 +624,8 @@ public static class ProductSeeding
                 Amount = 192,
                 ExperitionDate = DateTime.ParseExact("2023-07-06", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "9586c00f-d1aa-4933-9847-218d2e768143",
@@ -593,7 +638,8 @@ public static class ProductSeeding
                 Amount = 38,
                 ExperitionDate = DateTime.ParseExact("2023-07-20", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "fa378ced-5ca4-4852-9bb7-3e4415a7ef29",
@@ -606,7 +652,8 @@ public static class ProductSeeding
                 Amount = 184,
                 ExperitionDate = DateTime.ParseExact("2023-07-01", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "66816d79-5f11-4f54-b514-81252053a92b",
@@ -619,7 +666,8 @@ public static class ProductSeeding
                 Amount = 188,
                 ExperitionDate = DateTime.ParseExact("2023-07-12", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "dee01c37-5d8d-4d4b-834d-99c024318ce4",
@@ -632,7 +680,8 @@ public static class ProductSeeding
                 Amount = 59,
                 ExperitionDate = DateTime.ParseExact("2023-07-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "cfa06f5d-41f5-436d-842b-73126f37c66b",
@@ -645,7 +694,8 @@ public static class ProductSeeding
                 Amount = 87,
                 ExperitionDate = DateTime.ParseExact("2023-07-06", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             }, new Product
             {
                 Id = "da7836f1-c46d-4a83-90c1-05adda640062",
@@ -658,7 +708,8 @@ public static class ProductSeeding
                 Amount = 241,
                 ExperitionDate = DateTime.ParseExact("2023-06-24", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 ProductionDate = DateTime.ParseExact("2023-06-22", "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                Barcode = ""
             });
     }
 }

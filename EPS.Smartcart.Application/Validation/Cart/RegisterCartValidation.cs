@@ -13,11 +13,6 @@ public class RegisterCartValidation : AbstractValidationHandler<RegisterCartQuer
             .NotEmpty()
             .NotNull()
             .WithMessage("Id is required!");
-        
-        RuleFor(x => x.RegisterCartDTO.UserId)
-            .NotEmpty()
-            .NotNull()
-            .WithMessage("UserId is required!");
 
         RuleFor(x => x.RegisterCartDTO.Code)
             .NotEmpty()
@@ -35,6 +30,8 @@ public class RegisterCartValidation : AbstractValidationHandler<RegisterCartQuer
         RuleFor(x => x.RegisterCartDTO.UserId)
             .MustAsync(async (x, userId, cancellationToken) =>
             {
+                if (String.IsNullOrEmpty(userId)) return true;
+
                 var user = await uow.UserRepository.GetById(userId);
                 return user != null;
             })
