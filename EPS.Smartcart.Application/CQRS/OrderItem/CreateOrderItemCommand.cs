@@ -5,7 +5,7 @@ using MediatR;
 
 namespace EPS.Smartcart.Application.CQRS.OrderItem;
 
-public class CreateOrderItemCommand : IRequest<Domain.OrderItem>
+public class CreateOrderItemCommand : IRequest<Domain.Order>
 {
     public CreateOrderItemDTO OrderItemDTO { get; set; }
     
@@ -15,13 +15,13 @@ public class CreateOrderItemCommand : IRequest<Domain.OrderItem>
     }
 }
 
-public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<CreateOrderItemCommand, Domain.OrderItem>
+public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<CreateOrderItemCommand, Domain.Order>
 {
     public CreateOrderItemCommandHandler(IUnitOfWork uow, IMapper mapper) : base(uow, mapper)
     {
     }
 
-    public async Task<Domain.OrderItem> Handle(CreateOrderItemCommand request, CancellationToken cancellationToken)
+    public async Task<Domain.Order> Handle(CreateOrderItemCommand request, CancellationToken cancellationToken)
     {
         var orderItem = _mapper.Map<Domain.OrderItem>(request.OrderItemDTO);
 
@@ -30,6 +30,7 @@ public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Cr
         _uow.OrderItemRepository.Create(orderItem);
         await _uow.Commit();
         
-        return orderItem;
+        var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
+        return order;
     }
 }
