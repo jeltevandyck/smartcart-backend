@@ -32,7 +32,7 @@ public class CreateOrderCommandHandler : AbstractHandler, IRequestHandler<Create
         var now = DateTime.Now;
         order.CreatedDate = now;
         order.ChangedStatusDate = now;
-
+        
         _uow.OrderRepository.Create(order);
         
         var cart = await _uow.CartRepository.GetById(request.OrderDTO.CartId);

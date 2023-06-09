@@ -30,6 +30,7 @@ public class UnregisterCartQueryHandler : AbstractHandler, IRequestHandler<Unreg
         cart.Status = CartStatus.STANDBY;
         cart.UserId = null;
         cart.GroceryListId = null;
+        cart.OrderId = null;
         cart.Code = CodeUtil.Generate(8);
         
         cart = _uow.CartRepository.Update(cart);
