@@ -44,7 +44,7 @@ public class CartController : AbstractController
     }
 
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteCartDTO cart)
+    public async Task<IActionResult> Delete([FromQuery] DeleteCartDTO cart)
     {
         var result = await _mediator.Send(new DeleteCartCommand(cart));
         return Ok(result);

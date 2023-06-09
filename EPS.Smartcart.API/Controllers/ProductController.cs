@@ -42,7 +42,7 @@ public class ProductController : AbstractController
     }
     
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteProductDTO product)
+    public async Task<IActionResult> Delete([FromQuery] DeleteProductDTO product)
     {
         var result = await _mediator.Send(new DeleteProductCommand(product));
         return Ok(result);

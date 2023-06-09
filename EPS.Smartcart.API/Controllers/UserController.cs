@@ -42,7 +42,7 @@ public class UserController : AbstractController
     }
     
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteUserDTO user)
+    public async Task<IActionResult> Delete([FromQuery] DeleteUserDTO user)
     {
         var result = await _mediator.Send(new DeleteUserCommand(user));
         return Ok(result);

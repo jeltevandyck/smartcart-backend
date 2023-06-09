@@ -44,7 +44,7 @@ public class OrderController : AbstractController
     }
     
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteOrderDTO order)
+    public async Task<IActionResult> Delete([FromQuery] DeleteOrderDTO order)
     {
         var result = await _mediator.Send(new DeleteOrderCommand(order));
         return Ok(result);

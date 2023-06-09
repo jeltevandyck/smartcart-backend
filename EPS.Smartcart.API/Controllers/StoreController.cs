@@ -42,7 +42,7 @@ public class StoreController : AbstractController
     }
     
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteStoreDTO store)
+    public async Task<IActionResult> Delete([FromQuery] DeleteStoreDTO store)
     {
         var result = await _mediator.Send(new DeleteStoreCommand(store));
         return Ok(result);

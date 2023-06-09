@@ -43,7 +43,7 @@ public class AddressController : AbstractController
     }
 
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeleteAddressDTO address)
+    public async Task<IActionResult> Delete([FromQuery] DeleteAddressDTO address)
     {
         var result = await _mediator.Send(new DeleteAddressCommand(address));
         return Ok(result);
