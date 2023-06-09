@@ -65,7 +65,7 @@ public class GroceryListController : AbstractController
     }
     
     [HttpDelete("product")]
-    public async Task<IActionResult> DeleteItem([FromBody] DeleteGroceryItemDTO item)
+    public async Task<IActionResult> DeleteItem([FromQuery] DeleteGroceryItemDTO item)
     {
         var result = await _mediator.Send(new DeleteGroceryItemCommand(item));
         return Ok(result);

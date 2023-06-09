@@ -65,7 +65,7 @@ public class OrderController : AbstractController
     }
     
     [HttpDelete("product")]
-    public async Task<IActionResult> RemoveItem([FromBody] DeleteOrderItemDTO item)
+    public async Task<IActionResult> RemoveItem([FromQuery] DeleteOrderItemDTO item)
     {
         var result = await _mediator.Send(new DeleteOrderItemCommand(item));
         return Ok(result);
