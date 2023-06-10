@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EPS.Smartcart.Infrastructure.Migrations
 {
     [DbContext(typeof(SmartcartContext))]
-    [Migration("20230608194234_Initial")]
+    [Migration("20230610155153_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -143,28 +143,28 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         new
                         {
                             Id = "306545b0-4457-4fd7-8966-f8fe25999b47",
-                            Code = "63448791",
+                            Code = "85973743",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "e6d39016-4c8e-479e-84b6-5c6c01acac4e",
-                            Code = "05493648",
+                            Code = "95470751",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "39791b70-3223-42cb-b345-be7be62ffa81",
-                            Code = "60456464",
+                            Code = "07758482",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "6af975e1-ef09-4dad-8c9b-1e329afe91fc",
-                            Code = "43414929",
+                            Code = "12617271",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         });

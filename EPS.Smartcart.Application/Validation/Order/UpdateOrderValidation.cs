@@ -20,13 +20,5 @@ public class UpdateOrderValidation : AbstractValidationHandler<UpdateOrderComman
                 return order != null;
             })
             .WithMessage("Order does not exist!");
-
-        /*RuleFor(x => x.OrderDTO.CartId)
-            .MustAsync(async (x, cartId, cancellationToken) =>
-            {
-                var cart = await uow.CartRepository.GetById(cartId);
-                return cart != null;
-            })
-            .WithMessage("Cart does not exist!");*/
     }
 }

@@ -17,7 +17,7 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
     
     public async Task<IEnumerable<T>> GetAll(IFilter<T> filter, PaginationFilter<T> paginationFilter)
     {
-        var queryable = Data.AsQueryable();
+        var queryable = Data.AsQueryable().AsNoTracking();
 
         queryable = filter.Apply(queryable);
         
@@ -30,7 +30,7 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
 
     public async Task<T> GetById(string id)
     {
-        var queryable = Data.AsQueryable();
+        var queryable = Data.AsQueryable().AsNoTracking();
         
         queryable = Include(queryable);
         
@@ -56,7 +56,7 @@ public abstract class AbstractRepository<T> : IRepository<T> where T : Entity
     
     public Task<List<T>> Query(Expression<Func<T, bool>> predicate)
     {
-        return Data.Where(predicate).ToListAsync();
+        return Data.AsNoTracking().Where(predicate).ToListAsync();
     }
 
     public abstract IQueryable<T> Include(IQueryable<T> queryable);
