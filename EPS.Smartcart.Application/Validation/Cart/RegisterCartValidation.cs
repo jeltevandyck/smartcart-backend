@@ -69,5 +69,16 @@ public class RegisterCartValidation : AbstractValidationHandler<RegisterCartQuer
                 return cart.StoreId == storeId;
             })
             .WithMessage("StoreId is invalid! Cart must belong to the same store.");
+
+        RuleFor(x => x.RegisterCartDTO.GroceryListId)
+            .MustAsync(async (x, groceryListId, cancellationToken) =>
+            {
+                if (String.IsNullOrEmpty(groceryListId)) return true;
+
+                var groceryList = await _uow.GroceryListRepository.GetById(groceryListId);
+
+                return groceryList.StoreId == x.RegisterCartDTO.StoreId;
+            })
+            .WithMessage("Grocerylist is not from the same store!");
     }
 }
