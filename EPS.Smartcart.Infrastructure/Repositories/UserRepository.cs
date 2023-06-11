@@ -13,7 +13,8 @@ public class UserRepository : AbstractRepository<User>
     public override IQueryable<User> Include(IQueryable<User> queryable)
     {
         queryable = queryable.Include(x => x.Orders)
-            .Include(x => x.GroceryLists).AsNoTracking();
+            .Include(x => x.GroceryLists)
+            .ThenInclude(x => x.Store).AsNoTracking();
         return queryable;
     }
 }
