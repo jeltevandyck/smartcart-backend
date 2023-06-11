@@ -8,7 +8,6 @@ public class Cart : Entity
     public CartStatus Status { get; set; }
     public string? Code { get; set; }
     public string StoreId { get; set; }
-    [JsonIgnore]
     public Store Store { get; set; }
     public string? UserId { get; set; }
     public string? OrderId { get; set; }
