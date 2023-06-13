@@ -140,28 +140,28 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         new
                         {
                             Id = "306545b0-4457-4fd7-8966-f8fe25999b47",
-                            Code = "85973743",
+                            Code = "16171029",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "e6d39016-4c8e-479e-84b6-5c6c01acac4e",
-                            Code = "95470751",
+                            Code = "93024754",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "39791b70-3223-42cb-b345-be7be62ffa81",
-                            Code = "07758482",
+                            Code = "88010060",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "6af975e1-ef09-4dad-8c9b-1e329afe91fc",
-                            Code = "12617271",
+                            Code = "21842038",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         });
@@ -320,6 +320,9 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<double>("Weight")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.HasIndex("StoreId");
@@ -339,7 +342,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Fuelton",
                             Price = 87.310000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -353,7 +357,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Isologia",
                             Price = 95.980000000000004,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -367,7 +372,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Acusage",
                             Price = 17.370000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -381,7 +387,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Terragen",
                             Price = 65.680000000000007,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -395,7 +402,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Vendblend",
                             Price = 73.430000000000007,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -409,7 +417,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Gazak",
                             Price = 61.490000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -423,7 +432,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Geekmosis",
                             Price = 83.140000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -437,7 +447,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Junipoor",
                             Price = 98.370000000000005,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -451,7 +462,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Zillidium",
                             Price = 51.609999999999999,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -465,7 +477,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Aclima",
                             Price = 72.739999999999995,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -479,7 +492,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Progenex",
                             Price = 7.1799999999999997,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -493,7 +507,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Genekom",
                             Price = 44.020000000000003,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -507,7 +522,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Nutralab",
                             Price = 19.07,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -521,7 +537,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Anocha",
                             Price = 42.329999999999998,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -535,7 +552,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Xoggle",
                             Price = 76.170000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -549,7 +567,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Permadyne",
                             Price = 70.969999999999999,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -563,7 +582,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Noralex",
                             Price = 74.859999999999999,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -577,7 +597,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Aquacine",
                             Price = 78.290000000000006,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -591,7 +612,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Puria",
                             Price = 86.049999999999997,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -605,7 +627,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Blanet",
                             Price = 19.57,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -619,7 +642,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Applideck",
                             Price = 74.349999999999994,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -633,7 +657,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Exoswitch",
                             Price = 67.709999999999994,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -647,7 +672,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Telequiet",
                             Price = 36.57,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -661,7 +687,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Visualix",
                             Price = 39.229999999999997,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -675,7 +702,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Insuresys",
                             Price = 32.609999999999999,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -689,7 +717,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Apex",
                             Price = 63.759999999999998,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -703,7 +732,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Rodeocean",
                             Price = 99.280000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -717,7 +747,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Zanity",
                             Price = 84.790000000000006,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -731,7 +762,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Quonata",
                             Price = 14.85,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -745,7 +777,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Besto",
                             Price = 73.310000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -759,7 +792,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Zilch",
                             Price = 80.450000000000003,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -773,7 +807,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Aquasseur",
                             Price = 51.670000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -787,7 +822,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Comtract",
                             Price = 95.349999999999994,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -801,7 +837,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Furnitech",
                             Price = 19.100000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -815,7 +852,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Extro",
                             Price = 74.549999999999997,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -829,7 +867,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Assistix",
                             Price = 34.700000000000003,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -843,7 +882,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Cedward",
                             Price = 36.840000000000003,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -857,7 +897,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Trollery",
                             Price = 12.140000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -871,7 +912,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Cognicode",
                             Price = 9.6799999999999997,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -885,7 +927,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Fiberox",
                             Price = 45.670000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -899,7 +942,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Rooforia",
                             Price = 44.600000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -913,7 +957,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Biotica",
                             Price = 41.880000000000003,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -927,7 +972,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Firewax",
                             Price = 87.010000000000005,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -941,7 +987,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Isostream",
                             Price = 65.200000000000003,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -955,7 +1002,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Lovepad",
                             Price = 25.920000000000002,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -969,7 +1017,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Miraclis",
                             Price = 35.619999999999997,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -983,7 +1032,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Mangelica",
                             Price = 61.0,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -997,7 +1047,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Zillactic",
                             Price = 1.21,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -1011,7 +1062,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Zytrax",
                             Price = 60.460000000000001,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         },
                         new
                         {
@@ -1025,7 +1077,8 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                             Name = "Interodeo",
                             Price = 98.739999999999995,
                             ProductionDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
+                            StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b",
+                            Weight = 0.0
                         });
                 });
 

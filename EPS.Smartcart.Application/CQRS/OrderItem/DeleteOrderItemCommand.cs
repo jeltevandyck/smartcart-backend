@@ -24,11 +24,26 @@ public class DeleteOrderItemCommandHandler : AbstractHandler, IRequestHandler<De
     public async Task<Domain.Order> Handle(DeleteOrderItemCommand request, CancellationToken cancellationToken)
     {
         var orderItem = await _uow.OrderItemRepository.GetById(request.OrderItemDTO.Id);
+        var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
+        var cart = await _uow.CartRepository.GetById(order.CartId);
 
+        if (!String.IsNullOrEmpty(cart.GroceryListId))
+        {
+            var groceryList = await _uow.GroceryListRepository.GetById(cart.GroceryListId);
+
+            foreach (var item in groceryList.GroceryItems)
+            {
+                if (item.ProductId.Equals(orderItem.ProductId))
+                {
+                    item.IsCollected = false;
+                    _uow.GroceryItemRepository.Update(item);
+                }
+            }
+        }
+        
         _uow.OrderItemRepository.Delete(orderItem);
         await _uow.Commit();
         
-        var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
         return order;
     }
 }

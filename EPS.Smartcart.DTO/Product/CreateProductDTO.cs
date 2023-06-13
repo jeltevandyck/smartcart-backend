@@ -8,6 +8,7 @@ public class CreateProductDTO
     public double Price { get; set; }
     public double Discount { get; set; }
     public double DiscountPercentage { get; set; }
+    public double Weight { get; set; }
     public int Amount { get; set; }
     public DateTime ExpirationDate { get; set; }
     public DateTime? ProductionDate { get; set; }

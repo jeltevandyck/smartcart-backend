@@ -13,6 +13,14 @@ public class UpdateOrderItemValidation : AbstractValidationHandler<UpdateOrderIt
             .NotNull()
             .WithMessage("Id is required!");
         
+        RuleFor(x => x.OrderItemDTO.Id)
+            .MustAsync(async (id, cancellationToken) =>
+            {
+                var orderItem = await _uow.OrderItemRepository.GetById(id);
+                return orderItem != null;
+            })
+            .WithMessage("OrderItem does not exist!");
+
         RuleFor(x => x.OrderItemDTO.ProductId)
             .MustAsync(async (productId, cancellation) =>
             {

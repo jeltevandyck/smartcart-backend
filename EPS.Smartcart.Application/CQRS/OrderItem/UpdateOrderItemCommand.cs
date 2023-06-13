@@ -24,13 +24,31 @@ public class UpdateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Up
     public async Task<Domain.Order> Handle(UpdateOrderItemCommand request, CancellationToken cancellationToken)
     {
         var orderItem = await _uow.OrderItemRepository.GetById(request.OrderItemDTO.Id);
+        var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
+        var cart = await _uow.CartRepository.GetById(order.CartId);
 
         orderItem = _mapper.Map(request.OrderItemDTO, orderItem);
-
-        _uow.OrderItemRepository.Update(orderItem);
-        await _uow.Commit();
+        orderItem = _uow.OrderItemRepository.Update(orderItem);
         
-        var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
+        if (!String.IsNullOrEmpty(cart.GroceryListId))
+        {
+            var groceryList = await _uow.GroceryListRepository.GetById(cart.GroceryListId);
+
+            foreach (var item in groceryList.GroceryItems)
+            {
+                if (item.ProductId.Equals(orderItem.ProductId) && orderItem.Amount >= item.Amount)
+                {
+                    item.IsCollected = true;
+                    _uow.GroceryItemRepository.Update(item);
+                } else if (item.ProductId.Equals(orderItem.ProductId) && orderItem.Amount < item.Amount)
+                {
+                    item.IsCollected = false;
+                    _uow.GroceryItemRepository.Update(item);
+                }
+            }
+        }
+        
+        await _uow.Commit();
         return order;
     }
 }

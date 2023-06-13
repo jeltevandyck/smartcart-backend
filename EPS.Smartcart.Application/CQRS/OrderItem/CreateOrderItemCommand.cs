@@ -25,7 +25,7 @@ public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Cr
     {
         var orderItem = _mapper.Map<Domain.OrderItem>(request.OrderItemDTO);
         var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
-
+        
         Domain.OrderItem existingOrderItem = null;
         foreach (var item in order.OrderItems)
         {
@@ -40,13 +40,29 @@ public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Cr
         if (existingOrderItem == null)
         {
             orderItem.Id = Guid.NewGuid().ToString();
-            _uow.OrderItemRepository.Create(orderItem);
+            orderItem = _uow.OrderItemRepository.Create(orderItem);
         }
         else
         {
-            _uow.OrderItemRepository.Update(existingOrderItem);
+            orderItem = _uow.OrderItemRepository.Update(existingOrderItem);
         }
+        
+        var cart = await _uow.CartRepository.GetById(order.CartId);
 
+        if (!String.IsNullOrEmpty(cart.GroceryListId))
+        {
+            var groceryList = await _uow.GroceryListRepository.GetById(cart.GroceryListId);
+
+            foreach (var item in groceryList.GroceryItems)
+            {
+                if (item.ProductId.Equals(orderItem.ProductId) &&  orderItem.Amount >= item.Amount)
+                {
+                    item.IsCollected = true;
+                    _uow.GroceryItemRepository.Update(item);
+                }
+            }
+        }
+        
         await _uow.Commit();
 
         order = await _uow.OrderRepository.GetById(orderItem.OrderId);

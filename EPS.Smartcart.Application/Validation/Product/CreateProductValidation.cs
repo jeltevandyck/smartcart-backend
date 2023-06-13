@@ -34,6 +34,10 @@ public class CreateProductValidation : AbstractValidationHandler<CreateProductCo
         RuleFor(x => x.ProductDTO.Amount)
             .NotNull()
             .WithMessage("Amount is required!");
+        
+        RuleFor(x => x.ProductDTO.Weight)
+            .NotNull()
+            .WithMessage("Weight is required!");
 
         RuleFor(x => x.ProductDTO.ExpirationDate)
             .NotEmpty()
