@@ -31,8 +31,7 @@ public class RegisterCartQueryHandler : AbstractHandler, IRequestHandler<Registe
         if (!String.IsNullOrEmpty(request.RegisterCartDTO.UserId)) cart.UserId = request.RegisterCartDTO.UserId;
         else cart.UserId = null;
 
-        if (!String.IsNullOrEmpty(request.RegisterCartDTO.GroceryListId))
-            cart.GroceryListId = request.RegisterCartDTO.GroceryListId;
+        if (!String.IsNullOrEmpty(request.RegisterCartDTO.GroceryListId)) cart.GroceryListId = request.RegisterCartDTO.GroceryListId;
         else cart.GroceryListId = null;
 
         cart = _uow.CartRepository.Update(cart);
