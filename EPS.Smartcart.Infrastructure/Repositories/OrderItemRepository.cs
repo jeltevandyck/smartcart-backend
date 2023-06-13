@@ -12,7 +12,7 @@ public class OrderItemRepository : AbstractRepository<OrderItem>
 
     public override IQueryable<OrderItem> Include(IQueryable<OrderItem> queryable)
     {
-        queryable = queryable.Include(x => x.Product);
+        queryable = queryable.Include(x => x.Product).AsNoTracking();
         return queryable;
     }
 }
