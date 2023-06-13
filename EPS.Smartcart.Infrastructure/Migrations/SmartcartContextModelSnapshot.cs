@@ -140,28 +140,28 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         new
                         {
                             Id = "306545b0-4457-4fd7-8966-f8fe25999b47",
-                            Code = "16171029",
+                            Code = "85522750",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "e6d39016-4c8e-479e-84b6-5c6c01acac4e",
-                            Code = "93024754",
+                            Code = "40007824",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "39791b70-3223-42cb-b345-be7be62ffa81",
-                            Code = "88010060",
+                            Code = "38398615",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "6af975e1-ef09-4dad-8c9b-1e329afe91fc",
-                            Code = "21842038",
+                            Code = "25893411",
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         });
@@ -184,11 +184,13 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
                     b.Property<string>("ProductId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GroceryListId");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("tblGroceryItems", (string)null);
                 });
@@ -1205,6 +1207,14 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         .HasForeignKey("GroceryListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("EPS.Smartcart.Domain.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("EPS.Smartcart.Domain.GroceryList", b =>

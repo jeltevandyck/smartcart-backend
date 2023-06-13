@@ -25,42 +25,36 @@ public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Cr
     {
         var orderItem = _mapper.Map<Domain.OrderItem>(request.OrderItemDTO);
         var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
-        
-        Domain.OrderItem existingOrderItem = null;
-        foreach (var item in order.OrderItems)
-        {
-            if (item.ProductId.Equals(orderItem.ProductId))
-            {
-                existingOrderItem = item;
-                existingOrderItem.Amount += orderItem.Amount;
-                break;
-            }
-        }
-        
-        if (existingOrderItem == null)
+
+        var existingOrderItems = await _uow.OrderItemRepository.Query(x => x.ProductId.Equals(orderItem.ProductId));
+
+        if (existingOrderItems.Count == 0)
         {
             orderItem.Id = Guid.NewGuid().ToString();
-            orderItem = _uow.OrderItemRepository.Create(orderItem);
+            _uow.OrderItemRepository.Create(orderItem);
         }
         else
         {
-            orderItem = _uow.OrderItemRepository.Update(existingOrderItem);
+            var item = existingOrderItems[0];
+            item.Amount += orderItem.Amount;
+            orderItem = _uow.OrderItemRepository.Update(item);
         }
         
         await _uow.Commit();
-        
+
         var cart = await _uow.CartRepository.GetById(order.CartId);
 
         if (!String.IsNullOrEmpty(cart.GroceryListId))
         {
-            var groceryList = await _uow.GroceryListRepository.GetById(cart.GroceryListId);
-
-            foreach (var item in groceryList.GroceryItems)
+            var existingGroceryItems = await _uow.GroceryItemRepository.Query(x => x.GroceryListId == cart.GroceryListId && x.ProductId.Equals(orderItem.ProductId));
+            if (existingGroceryItems.Count == 1)
             {
-                if (item.ProductId.Equals(orderItem.ProductId) &&  orderItem.Amount >= item.Amount)
+                var groceryItem = existingGroceryItems[0];
+                
+                if (orderItem.Amount >= groceryItem.Amount)
                 {
-                    item.IsCollected = true;
-                    _uow.GroceryItemRepository.Update(item);
+                    groceryItem.IsCollected = true;
+                    _uow.GroceryItemRepository.Update(groceryItem);
                 }
             }
         }
