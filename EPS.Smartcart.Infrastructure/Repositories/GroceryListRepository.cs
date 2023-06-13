@@ -12,7 +12,7 @@ public class GroceryListRepository : AbstractRepository<GroceryList>
 
     public override IQueryable<GroceryList> Include(IQueryable<GroceryList> queryable)
     {
-        queryable = queryable.Include(x => x.GroceryItems).ThenInclude(x => x.Product)
+        queryable = queryable.Include(x => x.GroceryItems).ThenInclude(x => x.Product).AsNoTracking()
             .Include(x => x.Store).AsNoTracking();
         return queryable;
     }
