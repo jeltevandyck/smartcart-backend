@@ -47,6 +47,8 @@ public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Cr
             orderItem = _uow.OrderItemRepository.Update(existingOrderItem);
         }
         
+        await _uow.Commit();
+        
         var cart = await _uow.CartRepository.GetById(order.CartId);
 
         if (!String.IsNullOrEmpty(cart.GroceryListId))
