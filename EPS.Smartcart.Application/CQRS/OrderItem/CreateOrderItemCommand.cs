@@ -26,7 +26,7 @@ public class CreateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Cr
         var orderItem = _mapper.Map<Domain.OrderItem>(request.OrderItemDTO);
         var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
 
-        var existingOrderItems = await _uow.OrderItemRepository.Query(x => x.ProductId.Equals(orderItem.ProductId));
+        var existingOrderItems = await _uow.OrderItemRepository.Query(x => x.OrderId.Equals(orderItem.OrderId) && x.ProductId.Equals(orderItem.ProductId));
 
         if (existingOrderItems.Count == 0)
         {
