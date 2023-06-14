@@ -49,9 +49,11 @@ public class UpdateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Up
                 }
             }
         }
-        
+        await _uow.Commit();
+
         order = await _uow.OrderRepository.GetById(orderItem.OrderId);
         await _uow.Commit();
+        
         return order;
     }
 }
