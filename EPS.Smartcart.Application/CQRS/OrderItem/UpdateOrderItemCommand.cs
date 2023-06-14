@@ -25,25 +25,27 @@ public class UpdateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Up
     {
         var orderItem = await _uow.OrderItemRepository.GetById(request.OrderItemDTO.Id);
         var order = await _uow.OrderRepository.GetById(orderItem.OrderId);
-        var cart = await _uow.CartRepository.GetById(order.CartId);
 
         orderItem = _mapper.Map(request.OrderItemDTO, orderItem);
         orderItem = _uow.OrderItemRepository.Update(orderItem);
         
+        var cart = await _uow.CartRepository.GetById(order.CartId);
         if (!String.IsNullOrEmpty(cart.GroceryListId))
         {
-            var groceryList = await _uow.GroceryListRepository.GetById(cart.GroceryListId);
-
-            foreach (var item in groceryList.GroceryItems)
+            var existingGroceryItems = await _uow.GroceryItemRepository.Query(x => x.GroceryListId == cart.GroceryListId && x.ProductId.Equals(orderItem.ProductId));
+            if (existingGroceryItems.Count == 1)
             {
-                if (item.ProductId.Equals(orderItem.ProductId) && orderItem.Amount >= item.Amount)
+                var groceryItem = existingGroceryItems[0];
+                
+                if (orderItem.Amount >= groceryItem.Amount)
                 {
-                    item.IsCollected = true;
-                    _uow.GroceryItemRepository.Update(item);
-                } else if (item.ProductId.Equals(orderItem.ProductId) && orderItem.Amount < item.Amount)
+                    groceryItem.IsCollected = true;
+                    _uow.GroceryItemRepository.Update(groceryItem);
+                }
+                else
                 {
-                    item.IsCollected = false;
-                    _uow.GroceryItemRepository.Update(item);
+                    groceryItem.IsCollected = true;
+                    _uow.GroceryItemRepository.Update(groceryItem);
                 }
             }
         }

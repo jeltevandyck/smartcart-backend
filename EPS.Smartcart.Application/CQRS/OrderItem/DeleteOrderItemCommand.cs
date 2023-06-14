@@ -29,17 +29,17 @@ public class DeleteOrderItemCommandHandler : AbstractHandler, IRequestHandler<De
 
         if (!String.IsNullOrEmpty(cart.GroceryListId))
         {
-            var groceryList = await _uow.GroceryListRepository.GetById(cart.GroceryListId);
-
-            foreach (var item in groceryList.GroceryItems)
+            var existingGroceryItems = await _uow.GroceryItemRepository.Query(x => x.GroceryListId == cart.GroceryListId && x.ProductId.Equals(orderItem.ProductId));
+            if (existingGroceryItems.Count == 1)
             {
-                if (item.ProductId.Equals(orderItem.ProductId))
-                {
-                    item.IsCollected = false;
-                    _uow.GroceryItemRepository.Update(item);
-                }
+                var groceryItem = existingGroceryItems[0];
+                
+                groceryItem.IsCollected = true;
+                _uow.GroceryItemRepository.Update(groceryItem);
             }
         }
+        
+        await _uow.Commit();
         
         _uow.OrderItemRepository.Delete(orderItem);
         await _uow.Commit();
