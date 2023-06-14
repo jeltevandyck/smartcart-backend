@@ -34,7 +34,7 @@ public class DeleteOrderItemCommandHandler : AbstractHandler, IRequestHandler<De
             {
                 var groceryItem = existingGroceryItems[0];
                 
-                groceryItem.IsCollected = true;
+                groceryItem.IsCollected = false;
                 _uow.GroceryItemRepository.Update(groceryItem);
             }
         }
