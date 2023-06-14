@@ -26,6 +26,7 @@ public class UpdateOrderCommandHandler : AbstractHandler, IRequestHandler<Update
         var order = await _uow.OrderRepository.GetById(request.OrderDTO.Id);
 
         order = _mapper.Map(request.OrderDTO, order);
+        if (request.OrderDTO.OrderStatus != null) order.Status = request.OrderDTO.OrderStatus.Value;
         
         _uow.OrderRepository.Update(order);
         

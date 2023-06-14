@@ -9,4 +9,5 @@ public class Order : Entity
     public DateTime? ChangedStatusDate { get; set; }
     public OrderStatus Status { get; set; }
     public string? CartId { get; set; }
+    public string? UserId { get; set; }
 }
