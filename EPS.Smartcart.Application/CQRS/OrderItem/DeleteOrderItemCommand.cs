@@ -44,6 +44,7 @@ public class DeleteOrderItemCommandHandler : AbstractHandler, IRequestHandler<De
         _uow.OrderItemRepository.Delete(orderItem);
         await _uow.Commit();
         
+        order = await _uow.OrderRepository.GetById(orderItem.OrderId);
         return order;
     }
 }
