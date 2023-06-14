@@ -44,12 +44,13 @@ public class UpdateOrderItemCommandHandler : AbstractHandler, IRequestHandler<Up
                 }
                 else
                 {
-                    groceryItem.IsCollected = true;
+                    groceryItem.IsCollected = false;
                     _uow.GroceryItemRepository.Update(groceryItem);
                 }
             }
         }
         
+        order = await _uow.OrderRepository.GetById(orderItem.OrderId);
         await _uow.Commit();
         return order;
     }
