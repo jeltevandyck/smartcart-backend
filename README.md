@@ -1,4 +1,4 @@
-# Smartcart REST API
+# FESMARKET REST API
 
 ![image](https://github.com/jeltevandyck/smartcart-backend/blob/master/logo.png)
 
