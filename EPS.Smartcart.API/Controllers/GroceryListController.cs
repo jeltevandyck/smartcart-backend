@@ -50,6 +50,13 @@ public class GroceryListController : AbstractController
         return Ok(result);
     }
     
+    [HttpPost("reset")]
+    public async Task<IActionResult> Reset([FromBody] ResetGroceryListDTO groceryList)
+    {
+        var result = await _mediator.Send(new ResetGroceryListQuery(groceryList));
+        return Ok(result);
+    }
+
     [HttpPost("product")]
     public async Task<IActionResult> AddItem([FromBody] CreateGroceryItemDTO item)
     {
