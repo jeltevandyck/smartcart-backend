@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.Urls.Add("http://10.132.0.2:5000");
+    app.Urls.Add("http://10.132.0.3:5000");
 }
 
 app.UseSwagger();
