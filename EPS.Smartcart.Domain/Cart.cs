@@ -7,6 +7,7 @@ public class Cart : Entity
 {
     public CartStatus Status { get; set; }
     public string? Code { get; set; }
+    public Boolean IsClaimed { get; set; }
     public string StoreId { get; set; }
     public Store Store { get; set; }
     public string? UserId { get; set; }

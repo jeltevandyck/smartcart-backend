@@ -116,6 +116,9 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     b.Property<string>("GroceryListId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsClaimed")
+                        .HasColumnType("bit");
+
                     b.Property<string>("OrderId")
                         .HasColumnType("nvarchar(max)");
 
@@ -140,28 +143,32 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                         new
                         {
                             Id = "306545b0-4457-4fd7-8966-f8fe25999b47",
-                            Code = "85522750",
+                            Code = "32796897",
+                            IsClaimed = false,
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "e6d39016-4c8e-479e-84b6-5c6c01acac4e",
-                            Code = "40007824",
+                            Code = "63832053",
+                            IsClaimed = false,
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "39791b70-3223-42cb-b345-be7be62ffa81",
-                            Code = "38398615",
+                            Code = "60033657",
+                            IsClaimed = false,
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         },
                         new
                         {
                             Id = "6af975e1-ef09-4dad-8c9b-1e329afe91fc",
-                            Code = "25893411",
+                            Code = "13008253",
+                            IsClaimed = false,
                             Status = "STANDBY",
                             StoreId = "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b"
                         });

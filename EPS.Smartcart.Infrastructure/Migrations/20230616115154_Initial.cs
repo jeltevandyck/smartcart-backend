@@ -94,6 +94,7 @@ namespace EPS.Smartcart.Infrastructure.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsClaimed = table.Column<bool>(type: "bit", nullable: false),
                     StoreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OrderId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -251,13 +252,13 @@ namespace EPS.Smartcart.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "tblCarts",
-                columns: new[] { "Id", "Code", "GroceryListId", "OrderId", "Status", "StoreId", "UserId" },
+                columns: new[] { "Id", "Code", "GroceryListId", "IsClaimed", "OrderId", "Status", "StoreId", "UserId" },
                 values: new object[,]
                 {
-                    { "306545b0-4457-4fd7-8966-f8fe25999b47", "85522750", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
-                    { "39791b70-3223-42cb-b345-be7be62ffa81", "38398615", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
-                    { "6af975e1-ef09-4dad-8c9b-1e329afe91fc", "25893411", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
-                    { "e6d39016-4c8e-479e-84b6-5c6c01acac4e", "40007824", null, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null }
+                    { "306545b0-4457-4fd7-8966-f8fe25999b47", "32796897", null, false, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
+                    { "39791b70-3223-42cb-b345-be7be62ffa81", "60033657", null, false, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
+                    { "6af975e1-ef09-4dad-8c9b-1e329afe91fc", "13008253", null, false, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null },
+                    { "e6d39016-4c8e-479e-84b6-5c6c01acac4e", "63832053", null, false, null, "STANDBY", "2b1bb8b2-4fb7-46fb-b97b-a50bca6a7e3b", null }
                 });
 
             migrationBuilder.InsertData(
