@@ -28,7 +28,7 @@ public class UpdateCartValidation : AbstractValidationHandler<UpdateCartCommand>
         RuleFor(x => x.CartDTO.IsClaimed)
             .MustAsync(async (command, isClaimed, cancellationToken) =>
             {
-                if (isClaimed == null) return true;
+                if (isClaimed == null) return true; 
                 var cartDTO = command.CartDTO;
 
                 var cart = await uow.CartRepository.GetById(cartDTO.Id);
