@@ -24,7 +24,20 @@ public class UpdateCartValidation : AbstractValidationHandler<UpdateCartCommand>
                 return cart != null;
             })
             .WithMessage("Id is invalid!");
+        
+        RuleFor(x => x.CartDTO.IsClaimed)
+            .MustAsync(async (command, isClaimed, cancellationToken) =>
+            {
+                if (isClaimed == null) return true;
+                var cartDTO = command.CartDTO;
 
+                var cart = await uow.CartRepository.GetById(cartDTO.Id);
+
+                return !(isClaimed == true && cart.IsClaimed);
+
+            })
+            .WithMessage("This cart is already claimed!");
+        
         RuleFor(x => x.CartDTO.GroceryListId)
             .MustAsync(async (x, groceryListId, cancellationToken) =>
             {

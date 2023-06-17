@@ -6,5 +6,5 @@ public class UpdateCartDTO
 {
     public string Id { get; set; }
     public string? GroceryListId { get; set; }
-    public string? IsClaimed { get; set; }
+    public bool? IsClaimed { get; set; }
 }
